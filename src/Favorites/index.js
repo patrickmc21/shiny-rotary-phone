@@ -12,4 +12,8 @@ const Favorites = ({numberofFavorites}) => {
   )
 }
 
+Favorites.propTypes = {
+  numberofFavorites: PropTypes.number
+}
+
 export default Favorites;

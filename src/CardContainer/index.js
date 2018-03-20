@@ -3,18 +3,25 @@ import PropTypes from 'prop-types';
 import ContentCard from '../ContentCard/index.js';
 import './styles.css';
 
-const CardContainer = () => {
-  const array = [];
-  for (let i =0; i< 100; i++) {
-    array.push(i);
-  }
-
-  const Cards = array.map(num => <ContentCard />)
+const CardContainer = ({activeCategoryInfo, activeCategoryName}) => {
+  const Cards = activeCategoryInfo.map(categoryItem => {
+    return (
+      <ContentCard 
+        key={categoryItem.name}
+        categoryItem={categoryItem}
+        activeCategoryName={activeCategoryName}/>
+    )
+  })
   return(
     <section className='Card-Container'>
+      <h2>{activeCategoryName}</h2>
       {Cards}
     </section>
   )
 }
+
+CardContainer.propTypes = {
+  activeCategory: PropTypes.array
+};
 
 export default CardContainer;
