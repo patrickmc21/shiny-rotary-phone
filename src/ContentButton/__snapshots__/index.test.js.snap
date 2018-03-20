@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Scroll should match the snapshot 1`] = `
+exports[`ContentButton should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Scroll />,
+  Symbol(enzyme.__unrendered__): <ContentButton />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,11 +17,12 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": "I'm the Scroll",
+      "children": undefined,
+      "className": "content-button",
     },
     "ref": null,
-    "rendered": "I'm the Scroll",
-    "type": "div",
+    "rendered": null,
+    "type": "button",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -29,11 +30,12 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": "I'm the Scroll",
+        "children": undefined,
+        "className": "content-button",
       },
       "ref": null,
-      "rendered": "I'm the Scroll",
-      "type": "div",
+      "rendered": null,
+      "type": "button",
     },
   ],
   Symbol(enzyme.__options__): Object {

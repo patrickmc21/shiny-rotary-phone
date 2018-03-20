@@ -4,7 +4,8 @@ import { shallow, mount } from 'enzyme';
 
 describe('App', () => {
   it('should match the snapshot', () => {
-    const wrapper = shallow(<App />);
+    const mockFetch = jest.fn();
+    const wrapper = shallow(<App retrieveScroll={mockFetch}/>);
     expect(wrapper).toMatchSnapshot();
   })
 })

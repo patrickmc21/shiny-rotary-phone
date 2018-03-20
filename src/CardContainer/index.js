@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ContentCard from './ContentCard/index.js';
+import ContentCard from '../ContentCard/index.js';
 import './styles.css';
 
 const CardContainer = () => {

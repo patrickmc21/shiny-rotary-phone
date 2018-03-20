@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Nav from './Nav/index.js';
-import Scroll from './Scroll/index.js';
-import Main from './Main/index.js';
+import Nav from '../Nav/index.js';
+import Scroll from '../Scroll/index.js';
+import Main from '../Main/index.js';
 import PropTypes from 'prop-types';
 import retrieveScroll from './helpers/retrieveScroll.js';
 import './styles.css';
@@ -19,11 +19,10 @@ class App extends Component {
   }
 
   fetchScroll = () => {
-    retrieveScroll()
+    this.props.retrieveScroll()
       .then(response => response.json())
       .then(scrollData=> this.setState({scrollData}))
       .catch(error => console.log(error))
-    console.log('Mounted!')
   }
 
   render() {

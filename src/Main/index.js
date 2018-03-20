@@ -1,5 +1,5 @@
 import React from 'react';
-import CardContainer from './CardContainer/index.js';
+import CardContainer from '../CardContainer/index.js';
 import PropTypes from 'prop-types';
 import './styles.css';
 
