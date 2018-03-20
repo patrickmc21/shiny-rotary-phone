@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const Favorites = () => {
+const Favorites = ({numberofFavorites}) => {
   return(
-    <div>I'm a Favorites button</div>
+    <button
+      className='favorites-button'>
+      Favorites
+      <span className='favorites-counter'>1</span>
+    </button>
   )
 }
 

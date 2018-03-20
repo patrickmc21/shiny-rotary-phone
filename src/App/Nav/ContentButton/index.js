@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const ContentButton = () => {
+const ContentButton = ({buttonType}) => {
   return(
-    <div>I'm a content button</div>
+    <button 
+      className='content-button'>
+      {buttonType}
+    </button>
   )
 }
 

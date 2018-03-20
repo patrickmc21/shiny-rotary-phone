@@ -6,10 +6,12 @@ import './styles.css';
 
 const Nav = () => {
   return (
-    <div>I'm the Nav
-      <ContentButton />
+    <nav className='App-Nav'>
+      <ContentButton buttonType='people'/>
+      <ContentButton buttonType='planets'/>
+      <ContentButton buttonType='vehicles'/>
       <Favorites />
-    </div>
+    </nav>
   )
 }
 

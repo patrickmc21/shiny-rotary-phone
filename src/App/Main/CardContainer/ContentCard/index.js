@@ -4,8 +4,10 @@ import './styles.css';
 
 const ContentCard = () => {
   return(
-    <div>I'm the content card</div>
+    <article className='content-card'>
+      I'm the ContentCard
+    </article>
   )
-}
+};
 
 export default ContentCard;

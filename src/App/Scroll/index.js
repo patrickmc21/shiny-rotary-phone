@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const Scroll = () => {
+const Scroll = ({scrollData}) => {
   return (
-    <div>I'm the Scroll</div>
+    <aside className='scroll'>
+      <article>
+        {scrollData}
+      </article>
+    </aside>
   )
 }
 

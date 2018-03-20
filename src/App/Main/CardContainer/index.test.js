@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ContentCard from './index.js';
+import CardContainer from './index.js';
 
-describe('ContentCard', () => {
+describe('CardContainer', () => {
 
   it('should match the snapshot', () => {
-    const wrapper = shallow(<ContentCard />);
+    const wrapper = shallow(<CardContainer />);
     expect(wrapper).toMatchSnapshot();
   })
 })

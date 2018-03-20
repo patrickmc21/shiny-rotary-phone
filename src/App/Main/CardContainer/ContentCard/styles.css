@@ -1,0 +1,7 @@
+.content-card {
+  display: inline-block;
+  border: 1px solid chartreuse;
+  margin: 4px;
+  height: 150px;
+  width: 10vw;
+}
