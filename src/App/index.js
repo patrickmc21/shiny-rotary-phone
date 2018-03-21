@@ -12,7 +12,8 @@ class App extends Component {
       scrollData: '',
       categories: {people: false, vehicles: false, planets: false},
       activeCategoryInfo: [],
-      activeCategoryName: ''
+      activeCategoryName: '',
+      favorites: []
     }
   }
 
@@ -49,19 +50,32 @@ class App extends Component {
       .then(activeCategoryInfo => this.setState({ activeCategoryInfo }))
   }
 
+  addToFavorites = (favoriteObject) => {
+    let favorites = [...this.state.favorites];
+    if (!favorites.find(item => item.name === favoriteObject.name)) {
+      favorites.push(favoriteObject);
+    } else {
+      favorites = favorites.filter(item => item.name !== favoriteObject.name);
+    }
+    this.setState({favorites})
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">SWapiBox</h1>
         </header>
-        <Scroll scrollData={this.state.scrollData}/>
+        <Scroll 
+          scrollData={this.state.scrollData}/>
         <Nav 
           activateCategory={this.activateCategory}
-          buttonType={Object.keys(this.state.categories)}/>
+          buttonType={Object.keys(this.state.categories)}
+          numberOfFavorites={this.state.favorites.length}/>
         <Main 
           activeCategoryInfo={this.state.activeCategoryInfo}
-          activeCategoryName={this.state.activeCategoryName}/>
+          activeCategoryName={this.state.activeCategoryName}
+          addToFavorites={this.addToFavorites}/>
       </div>
     );
   }

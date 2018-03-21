@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const ContentCard = ({categoryItem, activeCategoryName}) => {
+const ContentCard = ({categoryItem, activeCategoryName, addToFavorites}) => {
   const catKeys = Object.keys(categoryItem);
   const cardContent = catKeys.filter(key => key !== 'name').map(item => {
     return <li key={item}>{item}: {categoryItem[item]}</li>
@@ -10,7 +10,10 @@ const ContentCard = ({categoryItem, activeCategoryName}) => {
 
   return(
     <article className='content-card'>
-      <h3>{categoryItem.name}</h3>
+      <header>
+        <h3>{categoryItem.name}</h3>
+        <button className='favorite' onClick={() => addToFavorites(categoryItem)}>Favorite</button>
+      </header>
       <ul>
         {cardContent}
       </ul>
