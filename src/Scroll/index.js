@@ -6,7 +6,9 @@ const Scroll = ({scrollData}) => {
   return (
     <aside className='scroll'>
       <article>
-        {scrollData}
+        <p>{scrollData.opening_crawl}</p>
+        <h4>{scrollData.title}</h4>
+        <time>{scrollData.release_date}</time>
       </article>
     </aside>
   )

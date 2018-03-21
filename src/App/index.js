@@ -55,7 +55,7 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">SWapiBox</h1>
         </header>
-        <Scroll scrollData={this.state.scrollData.opening_crawl}/>
+        <Scroll scrollData={this.state.scrollData}/>
         <Nav 
           activateCategory={this.activateCategory}
           buttonType={Object.keys(this.state.categories)}/>
