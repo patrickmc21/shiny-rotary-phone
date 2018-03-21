@@ -1,0 +1,10 @@
+.favorites-button {
+  float: right;
+  height: 80px;
+  width: 180px;
+  font-size: 28px;
+}
+
+.favorites-counter {
+  margin-left: 10%;
+}

@@ -1,11 +1,11 @@
 import React from 'react';
-import App from './index.js';
 import { shallow, mount } from 'enzyme';
+import CardContainer from './index.js';
 
-describe('App', () => {
+describe('CardContainer', () => {
+
   it('should match the snapshot', () => {
-    const mockFetch = jest.fn();
-    const wrapper = shallow(<App retrieveScroll={mockFetch}/>);
+    const wrapper = shallow(<CardContainer />);
     expect(wrapper).toMatchSnapshot();
   })
 })

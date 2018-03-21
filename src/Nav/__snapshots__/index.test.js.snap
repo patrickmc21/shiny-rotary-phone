@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match the snapshot 1`] = `
+exports[`Nav should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <Nav />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,58 +18,27 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <header
-          className="App-header"
->
-          <h1
-                    className="App-title"
-          >
-                    SWapiBox
-          </h1>
-</header>,
-        <Scroll
-          scrollData={undefined}
+        <ContentButton
+          buttonType="people"
 />,
-        <Nav />,
-        <Main />,
+        <ContentButton
+          buttonType="planets"
+/>,
+        <ContentButton
+          buttonType="vehicles"
+/>,
+        <Favorites />,
       ],
-      "className": "App",
+      "className": "App-Nav",
     },
     "ref": null,
     "rendered": Array [
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <h1
-            className="App-title"
->
-            SWapiBox
-</h1>,
-          "className": "App-header",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "SWapiBox",
-            "className": "App-title",
-          },
-          "ref": null,
-          "rendered": "SWapiBox",
-          "type": "h1",
-        },
-        "type": "header",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "scrollData": undefined,
+          "buttonType": "people",
         },
         "ref": null,
         "rendered": null,
@@ -79,7 +48,20 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "buttonType": "planets",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "buttonType": "vehicles",
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -94,7 +76,7 @@ ShallowWrapper {
         "type": [Function],
       },
     ],
-    "type": "div",
+    "type": "nav",
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
@@ -103,58 +85,27 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <header
-            className="App-header"
->
-            <h1
-                        className="App-title"
-            >
-                        SWapiBox
-            </h1>
-</header>,
-          <Scroll
-            scrollData={undefined}
+          <ContentButton
+            buttonType="people"
 />,
-          <Nav />,
-          <Main />,
+          <ContentButton
+            buttonType="planets"
+/>,
+          <ContentButton
+            buttonType="vehicles"
+/>,
+          <Favorites />,
         ],
-        "className": "App",
+        "className": "App-Nav",
       },
       "ref": null,
       "rendered": Array [
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <h1
-              className="App-title"
->
-              SWapiBox
-</h1>,
-            "className": "App-header",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "SWapiBox",
-              "className": "App-title",
-            },
-            "ref": null,
-            "rendered": "SWapiBox",
-            "type": "h1",
-          },
-          "type": "header",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "scrollData": undefined,
+            "buttonType": "people",
           },
           "ref": null,
           "rendered": null,
@@ -164,7 +115,20 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "buttonType": "planets",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "buttonType": "vehicles",
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -179,7 +143,7 @@ ShallowWrapper {
           "type": [Function],
         },
       ],
-      "type": "div",
+      "type": "nav",
     },
   ],
   Symbol(enzyme.__options__): Object {
