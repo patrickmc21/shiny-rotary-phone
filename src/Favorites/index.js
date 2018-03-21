@@ -7,7 +7,7 @@ const Favorites = ({numberOfFavorites}) => {
     <button
       className='favorites-button'>
       Favorites
-      <span className='favorites-counter'>{numberOfFavorites || 0}</span>
+      <span className='favorites-counter'>{numberOfFavorites}</span>
     </button>
   )
 }
