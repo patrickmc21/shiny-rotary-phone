@@ -4,7 +4,17 @@ exports[`Nav should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Nav />,
+  Symbol(enzyme.__unrendered__): <Nav
+    activateCategory={[Function]}
+    buttonType={
+        Array [
+            "people",
+            "vehicles",
+            "planets",
+          ]
+    }
+    numberOfFavorites={3}
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -18,16 +28,23 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <ContentButton
-          buttonType="people"
+        Array [
+          <ContentButton
+            activateCategory={[Function]}
+            buttonType="people"
 />,
-        <ContentButton
-          buttonType="planets"
+          <ContentButton
+            activateCategory={[Function]}
+            buttonType="vehicles"
 />,
-        <ContentButton
-          buttonType="vehicles"
+          <ContentButton
+            activateCategory={[Function]}
+            buttonType="planets"
 />,
-        <Favorites />,
+        ],
+        <Favorites
+          numberOfFavorites={3}
+/>,
       ],
       "className": "App-Nav",
     },
@@ -35,9 +52,10 @@ ShallowWrapper {
     "rendered": Array [
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "people",
         "nodeType": "function",
         "props": Object {
+          "activateCategory": [Function],
           "buttonType": "people",
         },
         "ref": null,
@@ -46,9 +64,22 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": undefined,
+        "key": "vehicles",
         "nodeType": "function",
         "props": Object {
+          "activateCategory": [Function],
+          "buttonType": "vehicles",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "planets",
+        "nodeType": "function",
+        "props": Object {
+          "activateCategory": [Function],
           "buttonType": "planets",
         },
         "ref": null,
@@ -60,17 +91,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "buttonType": "vehicles",
+          "numberOfFavorites": 3,
         },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {},
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -85,16 +107,23 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <ContentButton
-            buttonType="people"
+          Array [
+            <ContentButton
+              activateCategory={[Function]}
+              buttonType="people"
 />,
-          <ContentButton
-            buttonType="planets"
+            <ContentButton
+              activateCategory={[Function]}
+              buttonType="vehicles"
 />,
-          <ContentButton
-            buttonType="vehicles"
+            <ContentButton
+              activateCategory={[Function]}
+              buttonType="planets"
 />,
-          <Favorites />,
+          ],
+          <Favorites
+            numberOfFavorites={3}
+/>,
         ],
         "className": "App-Nav",
       },
@@ -102,9 +131,10 @@ ShallowWrapper {
       "rendered": Array [
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "people",
           "nodeType": "function",
           "props": Object {
+            "activateCategory": [Function],
             "buttonType": "people",
           },
           "ref": null,
@@ -113,9 +143,22 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": undefined,
+          "key": "vehicles",
           "nodeType": "function",
           "props": Object {
+            "activateCategory": [Function],
+            "buttonType": "vehicles",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "planets",
+          "nodeType": "function",
+          "props": Object {
+            "activateCategory": [Function],
             "buttonType": "planets",
           },
           "ref": null,
@@ -127,17 +170,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "buttonType": "vehicles",
+            "numberOfFavorites": 3,
           },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {},
           "ref": null,
           "rendered": null,
           "type": [Function],
