@@ -23,7 +23,8 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites}) => {
 
 Nav.propTypes = {
   activateCategory: PropTypes.func,
-  buttonType: PropTypes.array
+  buttonType: PropTypes.array,
+  numberOfFavorites: PropTypes.number
 }
 
 export default Nav;

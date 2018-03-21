@@ -21,9 +21,7 @@ ShallowWrapper {
         "Favorites",
         <span
           className="favorites-counter"
->
-          1
-</span>,
+/>,
       ],
       "className": "favorites-button",
     },
@@ -35,11 +33,11 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": "1",
+          "children": 0,
           "className": "favorites-counter",
         },
         "ref": null,
-        "rendered": "1",
+        "rendered": 0,
         "type": "span",
       },
     ],
@@ -55,9 +53,7 @@ ShallowWrapper {
           "Favorites",
           <span
             className="favorites-counter"
->
-            1
-</span>,
+/>,
         ],
         "className": "favorites-button",
       },
@@ -69,11 +65,11 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "1",
+            "children": 0,
             "className": "favorites-counter",
           },
           "ref": null,
-          "rendered": "1",
+          "rendered": 0,
           "type": "span",
         },
       ],

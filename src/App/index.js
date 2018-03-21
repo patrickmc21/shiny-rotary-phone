@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrollData: '',
+      scrollData: {},
       categories: {people: false, vehicles: false, planets: false},
       activeCategoryInfo: [],
       activeCategoryName: '',
@@ -75,14 +75,16 @@ class App extends Component {
         <Main 
           activeCategoryInfo={this.state.activeCategoryInfo}
           activeCategoryName={this.state.activeCategoryName}
-          addToFavorites={this.addToFavorites}/>
+          addToFavorites={this.addToFavorites}
+          favorites={this.state.favorites}/>
       </div>
     );
   }
 }
 
 App.propTypes = {
-  apiFetchCalls: PropTypes.func
+  apiFetchCalls: PropTypes.func,
+  swapiCleaners: PropTypes.object
 }
 
 export default App;

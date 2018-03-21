@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const Favorites = ({numberOfFavorites}) => {
-  console.log(numberOfFavorites)
   return(
     <button
       className='favorites-button'>
