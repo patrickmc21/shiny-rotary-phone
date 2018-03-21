@@ -4,7 +4,16 @@ exports[`App should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <App />,
+  Symbol(enzyme.__unrendered__): <App
+    apiFetchCalls={[Function]}
+    swapiCleaners={
+        Object {
+            "people": [Function],
+            "planets": [Function],
+            "vehicles": [Function],
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -28,10 +37,25 @@ ShallowWrapper {
           </h1>
 </header>,
         <Scroll
-          scrollData={undefined}
+          scrollData={Object {}}
 />,
-        <Nav />,
-        <Main />,
+        <Nav
+          activateCategory={[Function]}
+          buttonType={
+                    Array [
+                              "people",
+                              "vehicles",
+                              "planets",
+                            ]
+          }
+          numberOfFavorites={0}
+/>,
+        <Main
+          activeCategoryInfo={Array []}
+          activeCategoryName=""
+          addToFavorites={[Function]}
+          favorites={Array []}
+/>,
       ],
       "className": "App",
     },
@@ -69,7 +93,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
-          "scrollData": undefined,
+          "scrollData": Object {},
         },
         "ref": null,
         "rendered": null,
@@ -79,7 +103,15 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "activateCategory": [Function],
+          "buttonType": Array [
+            "people",
+            "vehicles",
+            "planets",
+          ],
+          "numberOfFavorites": 0,
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -88,7 +120,12 @@ ShallowWrapper {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
-        "props": Object {},
+        "props": Object {
+          "activeCategoryInfo": Array [],
+          "activeCategoryName": "",
+          "addToFavorites": [Function],
+          "favorites": Array [],
+        },
         "ref": null,
         "rendered": null,
         "type": [Function],
@@ -113,10 +150,25 @@ ShallowWrapper {
             </h1>
 </header>,
           <Scroll
-            scrollData={undefined}
+            scrollData={Object {}}
 />,
-          <Nav />,
-          <Main />,
+          <Nav
+            activateCategory={[Function]}
+            buttonType={
+                        Array [
+                                    "people",
+                                    "vehicles",
+                                    "planets",
+                                  ]
+            }
+            numberOfFavorites={0}
+/>,
+          <Main
+            activeCategoryInfo={Array []}
+            activeCategoryName=""
+            addToFavorites={[Function]}
+            favorites={Array []}
+/>,
         ],
         "className": "App",
       },
@@ -154,7 +206,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "scrollData": undefined,
+            "scrollData": Object {},
           },
           "ref": null,
           "rendered": null,
@@ -164,7 +216,15 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "activateCategory": [Function],
+            "buttonType": Array [
+              "people",
+              "vehicles",
+              "planets",
+            ],
+            "numberOfFavorites": 0,
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
@@ -173,7 +233,12 @@ ShallowWrapper {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
-          "props": Object {},
+          "props": Object {
+            "activeCategoryInfo": Array [],
+            "activeCategoryName": "",
+            "addToFavorites": [Function],
+            "favorites": Array [],
+          },
           "ref": null,
           "rendered": null,
           "type": [Function],
