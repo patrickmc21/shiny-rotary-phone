@@ -18,6 +18,6 @@ const cleanPeople = (peopleData) => {
   
 }
 
-export { cleanPeople };
+export { cleanPeople, fetchSpecies };
 
 
