@@ -26,7 +26,7 @@ class App extends Component {
     const endpoint = `films/${randomNumber}`
     this.props.apiFetchCalls(endpoint)
       .then(scrollData=> this.setState({scrollData}))
-      .catch(error => console.log(error))
+      .catch(error => this.setState({errorStatus: error.message}))
   }
 
   activateCategory = (category) => {

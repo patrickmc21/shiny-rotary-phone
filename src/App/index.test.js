@@ -66,6 +66,23 @@ describe('App', () => {
     expect(wrapper.state('scrollData')).toEqual(expected);
   });
 
+  it('fetchScroll should add a state key of errorStatus on failed fetch', () => {
+    mockFetch = jest.fn().mockImplementation(() => Promise.reject({
+      message: 'An error has occured'
+    }));
+    const expected = 'An error has occured';
+    wrapper = shallow(
+      <App 
+        apiFetchCalls={mockFetch}
+        swapiCleaners={mockCleaners}/>)   
+    new Promise((resolve) => {
+      resolve(() => wrapper.instance().fetchScroll())
+    })
+      .then(() => wrapper.update())
+      .then(() => wrapper.update())
+      .then(() => expect(wrapper.state().errorStatus).toEqual(expected))
+  });
+
   it('activateCategory should change the activated category to true in state', () => {
     mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockCategoryData))
     const expectedCategory = {
@@ -96,16 +113,54 @@ describe('App', () => {
     expect(mockFetch).toHaveBeenCalled();
   });
 
-  it.skip('updateCurrentCategory should change the active category info', () => {
+  it('updateCurrentCategory should change the active category info', () => {
     mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockCategoryData));
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
         swapiCleaners={mockCleaners}/>);
     const expected = mockCategoryData;
-    wrapper.instance().updateCurrentCategory('people');
-    wrapper.update();
-    expect(wrapper.state('activeCategoryInfo')).toEqual(expected);
+    new Promise((resolve) => {
+      resolve(wrapper.instance().updateCurrentCategory('people'))
+    })
+      .then(() => wrapper.update())
+      .then(() => expect(wrapper.state().activeCategoryInfo).toEqual(expected))
+  });
+
+  it('addToFavorites should add a card info object to favorites', () => {
+    const expected = {
+        name: 'Han Solo',
+        Homeworld: 'Corellia',
+        'Homeworld Population': 10000,
+        Species: 'human'
+      };
+    wrapper.instance().addToFavorites(mockCategoryData[0]);
+    expect(wrapper.state().favorites).toEqual([expected])
+
+  })
+
+  it('addToFavorites should not add an existing favorited object into favorites', () => {
+    const clickedCard = {
+        name: 'Han Solo',
+        Homeworld: 'Corellia',
+        'Homeworld Population': 10000,
+        Species: 'human'
+      };
+    wrapper.setState({favorites: mockFavorites});
+    wrapper.instance().addToFavorites(clickedCard);
+    expect(wrapper.state().favorites.length).not.toEqual(2);
+  })
+
+  it('addToFavorites should remove an existing favorite if clicked again', () => {
+    const clickedCard = {
+        name: 'Han Solo',
+        Homeworld: 'Corellia',
+        'Homeworld Population': 10000,
+        Species: 'human'
+      };
+    wrapper.setState({favorites: mockFavorites});
+    wrapper.instance().addToFavorites(clickedCard);
+    expect(wrapper.state().favorites).toEqual([]);
   })
 
 });
