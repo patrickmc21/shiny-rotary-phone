@@ -46,6 +46,7 @@ ShallowWrapper {
                               "people",
                               "vehicles",
                               "planets",
+                              "favorites",
                             ]
           }
           numberOfFavorites={0}
@@ -109,6 +110,7 @@ ShallowWrapper {
             "people",
             "vehicles",
             "planets",
+            "favorites",
           ],
           "numberOfFavorites": 0,
         },
@@ -159,6 +161,7 @@ ShallowWrapper {
                                     "people",
                                     "vehicles",
                                     "planets",
+                                    "favorites",
                                   ]
             }
             numberOfFavorites={0}
@@ -222,6 +225,7 @@ ShallowWrapper {
               "people",
               "vehicles",
               "planets",
+              "favorites",
             ],
             "numberOfFavorites": 0,
           },

@@ -23,4 +23,4 @@ const cleanPlanets = (planetsData) => {
   return Promise.all(planets)
 }
 
-export { cleanPlanets };
+export { cleanPlanets, fetchResidents };

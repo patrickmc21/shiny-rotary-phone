@@ -88,7 +88,8 @@ describe('App', () => {
     const expectedCategory = {
       people: true,
       vehicles: false,
-      planets: false
+      planets: false,
+      favorites: false
     };
     const expectedName = 'people';
     wrapper.instance().activateCategory('people');

@@ -28,6 +28,7 @@ ShallowWrapper {
 </span>,
       ],
       "className": "favorites-button",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -62,6 +63,7 @@ ShallowWrapper {
 </span>,
         ],
         "className": "favorites-button",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [
