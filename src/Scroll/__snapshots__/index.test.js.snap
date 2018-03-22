@@ -4,7 +4,15 @@ exports[`Scroll should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Scroll />,
+  Symbol(enzyme.__unrendered__): <Scroll
+    scrollData={
+        Object {
+            "episode_id": 4,
+            "opening_crawl": "It is a period of civil war...",
+            "title": "A New Hope",
+          }
+    }
+/>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -17,7 +25,15 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <article />,
+      "children": <article>
+        <p>
+                It is a period of civil war...
+        </p>
+        <h4>
+                A New Hope
+        </h4>
+        <time />
+</article>,
       "className": "scroll",
     },
     "ref": null,
@@ -26,10 +42,52 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": undefined,
+        "children": Array [
+          <p>
+            It is a period of civil war...
+</p>,
+          <h4>
+            A New Hope
+</h4>,
+          <time />,
+        ],
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "It is a period of civil war...",
+          },
+          "ref": null,
+          "rendered": "It is a period of civil war...",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "A New Hope",
+          },
+          "ref": null,
+          "rendered": "A New Hope",
+          "type": "h4",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "time",
+        },
+      ],
       "type": "article",
     },
     "type": "aside",
@@ -40,7 +98,15 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <article />,
+        "children": <article>
+          <p>
+                    It is a period of civil war...
+          </p>
+          <h4>
+                    A New Hope
+          </h4>
+          <time />
+</article>,
         "className": "scroll",
       },
       "ref": null,
@@ -49,10 +115,52 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            <p>
+              It is a period of civil war...
+</p>,
+            <h4>
+              A New Hope
+</h4>,
+            <time />,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "It is a period of civil war...",
+            },
+            "ref": null,
+            "rendered": "It is a period of civil war...",
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "A New Hope",
+            },
+            "ref": null,
+            "rendered": "A New Hope",
+            "type": "h4",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": undefined,
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "time",
+          },
+        ],
         "type": "article",
       },
       "type": "aside",

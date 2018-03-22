@@ -15,7 +15,7 @@ const Scroll = ({scrollData}) => {
 }
 
 Scroll.propTypes = {
-  scrollData: PropTypes.string
+  scrollData: PropTypes.object
 }
 
 export default Scroll;

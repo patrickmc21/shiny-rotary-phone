@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import ContentCard from '../ContentCard/index.js';
 import './styles.css';
 
-const CardContainer = ({activeCategoryInfo, activeCategoryName}) => {
+const CardContainer = ({activeCategoryInfo, activeCategoryName, addToFavorites, favorites}) => {
   const Cards = activeCategoryInfo.map(categoryItem => {
+    const buttonClass = favorites.find(favorite => favorite.name === categoryItem.name) ? 'active' : '';
     return (
       <ContentCard 
         key={categoryItem.name}
         categoryItem={categoryItem}
-        activeCategoryName={activeCategoryName}/>
+        activeCategoryName={activeCategoryName}
+        addToFavorites={addToFavorites}
+        buttonClass={buttonClass}/>
     )
   })
   return(
@@ -21,7 +24,10 @@ const CardContainer = ({activeCategoryInfo, activeCategoryName}) => {
 }
 
 CardContainer.propTypes = {
-  activeCategory: PropTypes.array
+  activeCategory: PropTypes.array,
+  activeCategoryName: PropTypes.string,
+  addToFavorites: PropTypes.func,
+  favorites: PropTypes.array
 };
 
 export default CardContainer;

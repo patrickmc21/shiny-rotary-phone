@@ -1,0 +1,383 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContentCard should match the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ContentCard
+    activeCategoryName="people"
+    addToFavorites={[Function]}
+    buttonClass=""
+    categoryItem={
+        Object {
+            "Homeworld": "Kashyyk",
+            "Homeworld Population": 1000010,
+            "Species": "Wookie",
+            "name": "Chewbacca",
+          }
+    }
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <header>
+          <h3>
+                    Chewbacca
+          </h3>
+          <button
+                    className="favorite-btn "
+                    onClick={[Function]}
+          >
+                    Favorite
+          </button>
+</header>,
+        <ul>
+          <li>
+                    Homeworld
+                    : 
+                    Kashyyk
+          </li>
+          <li>
+                    Homeworld Population
+                    : 
+                    1000010
+          </li>
+          <li>
+                    Species
+                    : 
+                    Wookie
+          </li>
+</ul>,
+      ],
+      "className": "content-card  people",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <h3>
+              Chewbacca
+</h3>,
+            <button
+              className="favorite-btn "
+              onClick={[Function]}
+>
+              Favorite
+</button>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Chewbacca",
+            },
+            "ref": null,
+            "rendered": "Chewbacca",
+            "type": "h3",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Favorite",
+              "className": "favorite-btn ",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "Favorite",
+            "type": "button",
+          },
+        ],
+        "type": "header",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <li>
+              Homeworld
+              : 
+              Kashyyk
+</li>,
+            <li>
+              Homeworld Population
+              : 
+              1000010
+</li>,
+            <li>
+              Species
+              : 
+              Wookie
+</li>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Homeworld",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeworld",
+                ": ",
+                "Kashyyk",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeworld",
+              ": ",
+              "Kashyyk",
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Homeworld Population",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Homeworld Population",
+                ": ",
+                1000010,
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Homeworld Population",
+              ": ",
+              1000010,
+            ],
+            "type": "li",
+          },
+          Object {
+            "instance": null,
+            "key": "Species",
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                "Species",
+                ": ",
+                "Wookie",
+              ],
+            },
+            "ref": null,
+            "rendered": Array [
+              "Species",
+              ": ",
+              "Wookie",
+            ],
+            "type": "li",
+          },
+        ],
+        "type": "ul",
+      },
+    ],
+    "type": "article",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <header>
+            <h3>
+                        Chewbacca
+            </h3>
+            <button
+                        className="favorite-btn "
+                        onClick={[Function]}
+            >
+                        Favorite
+            </button>
+</header>,
+          <ul>
+            <li>
+                        Homeworld
+                        : 
+                        Kashyyk
+            </li>
+            <li>
+                        Homeworld Population
+                        : 
+                        1000010
+            </li>
+            <li>
+                        Species
+                        : 
+                        Wookie
+            </li>
+</ul>,
+        ],
+        "className": "content-card  people",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <h3>
+                Chewbacca
+</h3>,
+              <button
+                className="favorite-btn "
+                onClick={[Function]}
+>
+                Favorite
+</button>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Chewbacca",
+              },
+              "ref": null,
+              "rendered": "Chewbacca",
+              "type": "h3",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Favorite",
+                "className": "favorite-btn ",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "Favorite",
+              "type": "button",
+            },
+          ],
+          "type": "header",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <li>
+                Homeworld
+                : 
+                Kashyyk
+</li>,
+              <li>
+                Homeworld Population
+                : 
+                1000010
+</li>,
+              <li>
+                Species
+                : 
+                Wookie
+</li>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Homeworld",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Homeworld",
+                  ": ",
+                  "Kashyyk",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Homeworld",
+                ": ",
+                "Kashyyk",
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Homeworld Population",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Homeworld Population",
+                  ": ",
+                  1000010,
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Homeworld Population",
+                ": ",
+                1000010,
+              ],
+              "type": "li",
+            },
+            Object {
+              "instance": null,
+              "key": "Species",
+              "nodeType": "host",
+              "props": Object {
+                "children": Array [
+                  "Species",
+                  ": ",
+                  "Wookie",
+                ],
+              },
+              "ref": null,
+              "rendered": Array [
+                "Species",
+                ": ",
+                "Wookie",
+              ],
+              "type": "li",
+            },
+          ],
+          "type": "ul",
+        },
+      ],
+      "type": "article",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

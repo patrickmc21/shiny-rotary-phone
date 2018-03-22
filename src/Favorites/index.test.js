@@ -4,8 +4,17 @@ import Favorites from './index.js';
 
 describe('Favorites', () => {
 
+  let wrapper;
+  let mockNumberOfFavorites;
+
+  beforeEach(() => {
+    mockNumberOfFavorites = 3;
+    wrapper = shallow(
+      <Favorites numberOfFavorites={mockNumberOfFavorites}/>
+    );
+  })
+
   it('should match the snapshot', () => {
-    const wrapper = shallow(<Favorites />);
     expect(wrapper).toMatchSnapshot();  
   })
 })
