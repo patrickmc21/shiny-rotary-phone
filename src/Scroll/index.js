@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Scroll = ({scrollData}) => {
@@ -10,6 +11,7 @@ const Scroll = ({scrollData}) => {
         <h4>{scrollData.title}</h4>
         <time>{scrollData.release_date}</time>
       </article>
+      <Link to='/main'><button>Proceed to Main</button></Link>
     </aside>
   )
 }

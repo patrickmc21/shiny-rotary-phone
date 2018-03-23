@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ContentButton from '../ContentButton/index.js';
 import Favorites from '../Favorites/index.js';
 import PropTypes from 'prop-types';
@@ -8,20 +9,23 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites, activeCategoryNam
   const buttonsWithoutFavs = buttonType.filter(button => button !== 'favorites');
   const buttons = buttonsWithoutFavs.map(button => {
     return (
-      <ContentButton
-        key={button} 
-        buttonType={button}
-        activateCategory={activateCategory}
-        activeCategoryName={activeCategoryName} />
+      <Link to={`/${button}`} key={button}>
+          <ContentButton 
+            buttonType={button}
+            activateCategory={activateCategory}
+            activeCategoryName={activeCategoryName} />
+      </Link>
     )
   })
   return (
     <nav className='App-Nav'>
       {buttons}
-      <Favorites 
-        numberOfFavorites={numberOfFavorites}
-        activateCategory={activateCategory}
-        activeCategoryName={activeCategoryName}/>
+      <Link to='/favorites'>
+        <Favorites 
+          numberOfFavorites={numberOfFavorites}
+          activateCategory={activateCategory}
+          activeCategoryName={activeCategoryName}/>
+      </Link>
     </nav>
   )
 }
