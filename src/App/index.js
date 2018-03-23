@@ -19,6 +19,7 @@ class App extends Component {
       },
       activeCategoryInfo: [],
       activeCategoryName: 'main',
+      previousCategoryName: '',
       favorites: []
     }
   }
@@ -36,6 +37,7 @@ class App extends Component {
   }
 
   activateCategory = (category) => {
+    const previousCategoryName = this.state.previousCategoryName;
     const currentCategories = {...this.state.categories};
     const newCategories = Object.keys(currentCategories).reduce((acc, type) => {
       type === category ? 
@@ -47,6 +49,7 @@ class App extends Component {
     this.setState({
       categories: newCategories,
       activeCategoryName: category,
+      previousCategoryName
     })
   }
 
@@ -74,11 +77,12 @@ class App extends Component {
     return (
       <div className="App">
         <Route exact path='/' render={() => {
-          return (<Scroll 
-            scrollData={this.state.scrollData}/>)
-          }}/>
+          return (
+            <Scroll 
+              scrollData={this.state.scrollData}/>)
+            }}/>
         <Route path={`/${this.state.activeCategoryName}`} render={() => {
-          return (<div>
+          return (<div className={`wrapper ${this.state.activeCategoryName}`}>
             <header className="App-header">
               <h1 className="App-title">SWapiBox</h1>
             </header>

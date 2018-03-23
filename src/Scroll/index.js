@@ -11,7 +11,17 @@ const Scroll = ({scrollData}) => {
         <h4>{scrollData.title}</h4>
         <time>{scrollData.release_date}</time>
       </article>
-      <Link to='/main'><button>Proceed to Main</button></Link>
+      <form>
+        <input 
+          type='text'
+          name='user-name'
+          placeholder='Enter Name'/>
+        <Link to='/main'>
+          <button>
+            Proceed to SWapiBox
+          </button>
+        </Link>
+      </form>
     </aside>
   )
 }
