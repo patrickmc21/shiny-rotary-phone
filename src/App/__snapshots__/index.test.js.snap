@@ -41,6 +41,7 @@ ShallowWrapper {
 />,
         <Nav
           activateCategory={[Function]}
+          activeCategoryName=""
           buttonType={
                     Array [
                               "people",
@@ -106,6 +107,7 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "activateCategory": [Function],
+          "activeCategoryName": "",
           "buttonType": Array [
             "people",
             "vehicles",
@@ -156,6 +158,7 @@ ShallowWrapper {
 />,
           <Nav
             activateCategory={[Function]}
+            activeCategoryName=""
             buttonType={
                         Array [
                                     "people",
@@ -221,6 +224,7 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "activateCategory": [Function],
+            "activeCategoryName": "",
             "buttonType": Array [
               "people",
               "vehicles",

@@ -34,5 +34,5 @@ describe('ContentCard', () => {
   it('should run addToFavorites on click with correct params', () => {
     wrapper.find('.favorite-btn').simulate('click');
     expect(mockAddToFavorites).toHaveBeenCalledWith(mockCategoryItem);
-  })
+  });
 })

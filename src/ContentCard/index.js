@@ -9,7 +9,7 @@ const ContentCard = ({categoryItem, activeCategoryName, addToFavorites, buttonCl
   })
 
   return(
-    <article className={`content-card ${buttonClass} ${activeCategoryName}`}>
+    <article className={`content-card ${activeCategoryName} ${buttonClass}`}>
       <header>
         <h3>{categoryItem.name}</h3>
         <button 
