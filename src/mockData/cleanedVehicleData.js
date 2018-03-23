@@ -1,9 +1,10 @@
-[
+module.exports = [
     {
       name: "Sand Crawler",
       Model: "Digger Crawler",
       "Number of Passengers": "30",
       Class: "wheeled"
+    },
     {
       name: "T-16 skyhopper",
       Model: "T-16 skyhopper",

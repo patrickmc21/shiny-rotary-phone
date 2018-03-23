@@ -1,11 +1,4 @@
-const fetchResidents = (planetResidents) => {
-  const planets = planetResidents.map(resident => {
-    return fetch(resident)
-      .then(response => response.json())
-      .then(resident => resident.name)
-  })
-  return Promise.all(planets);
-}
+import { fetchResidents } from './fetchResidents.js';
 
 const cleanPlanets = (planetsData) => {
   const planets = planetsData.map( async (planet) => {
@@ -23,4 +16,4 @@ const cleanPlanets = (planetsData) => {
   return Promise.all(planets)
 }
 
-export { cleanPlanets, fetchResidents };
+export { cleanPlanets };

@@ -15,11 +15,6 @@ describe('cleanPeople', () => {
     expected = cleanPeopleMock;
   })
 
-  it('should call fetchSpecies', () => {
-    cleanPeople(fetchReturn);
-    expect(fetchSpecies).toHaveBeenCalled();
-  })
-
   it('should return a cleaned array of 10 people', async () => {
     const cleanPeopleResult =  await cleanPeople(fetchReturn);
     expect(cleanPeopleResult).toEqual(expected);

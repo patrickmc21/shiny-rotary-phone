@@ -5,7 +5,7 @@ const cleanVehicles = (vehicleData) => {
         name: vehicle.name, 
         Model: vehicle.model, 
         Class: vehicle.vehicle_class, 
-        'Number Of Passenegers': vehicle.passengers
+        'Number of Passengers': vehicle.passengers
       }
     )
   })

@@ -128,6 +128,13 @@ describe('App', () => {
       .then(() => expect(wrapper.state().activeCategoryInfo).toEqual(expected))
   });
 
+  it('updateCurrentCategory should change category to favorites if favorites button is clicked', () => {
+    const expected = mockFavorites;
+    wrapper.setState({favorites: mockFavorites});
+    wrapper.instance().updateCurrentCategory('favorites');
+    expect(wrapper.state().activeCategoryInfo).toEqual(expected);
+  })
+
   it('addToFavorites should add a card info object to favorites', () => {
     const expected = {
         name: 'Han Solo',
