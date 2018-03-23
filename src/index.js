@@ -4,9 +4,14 @@ import './index.css';
 import App from './App';
 import apiFetchCalls from './api/apiFetchCalls.js';
 import swapiCleaners from './dataCleaners/swapiCleaners.js';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(
-  <App 
-    apiFetchCalls={apiFetchCalls}
-    swapiCleaners={swapiCleaners}/>, 
-  document.getElementById('root'));
+const router = (
+  <BrowserRouter>
+    <App
+      apiFetchCalls={apiFetchCalls}
+      swapiCleaners={swapiCleaners}/>
+  </BrowserRouter>
+  );
+
+ReactDOM.render(router, document.getElementById('root'));

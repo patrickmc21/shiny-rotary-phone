@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 const Scroll = ({scrollData}) => {
@@ -10,6 +11,17 @@ const Scroll = ({scrollData}) => {
         <h4>{scrollData.title}</h4>
         <time>{scrollData.release_date}</time>
       </article>
+      <form>
+        <input 
+          type='text'
+          name='user-name'
+          placeholder='Enter Name'/>
+        <Link to='/main'>
+          <button>
+            Proceed to SWapiBox
+          </button>
+        </Link>
+      </form>
     </aside>
   )
 }

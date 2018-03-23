@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/index.js';
 import Scroll from '../Scroll/index.js';
 import Main from '../Main/index.js';
+import { Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './styles.css';
 
@@ -17,7 +18,8 @@ class App extends Component {
         favorites: false
       },
       activeCategoryInfo: [],
-      activeCategoryName: '',
+      activeCategoryName: 'main',
+      previousCategoryName: '',
       favorites: []
     }
   }
@@ -35,6 +37,7 @@ class App extends Component {
   }
 
   activateCategory = (category) => {
+    const previousCategoryName = this.state.previousCategoryName;
     const currentCategories = {...this.state.categories};
     const newCategories = Object.keys(currentCategories).reduce((acc, type) => {
       type === category ? 
@@ -46,6 +49,7 @@ class App extends Component {
     this.setState({
       categories: newCategories,
       activeCategoryName: category,
+      previousCategoryName
     })
   }
 
@@ -72,21 +76,29 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">SWapiBox</h1>
-        </header>
-        <Scroll 
-          scrollData={this.state.scrollData}/>
-        <Nav 
-          activateCategory={this.activateCategory}
-          buttonType={Object.keys(this.state.categories)}
-          numberOfFavorites={this.state.favorites.length}
-          activeCategoryName={this.state.activeCategoryName}/>
-        <Main 
-          activeCategoryInfo={this.state.activeCategoryInfo}
-          activeCategoryName={this.state.activeCategoryName}
-          addToFavorites={this.addToFavorites}
-          favorites={this.state.favorites}/>
+        <Route exact path='/' render={() => {
+          return (
+            <Scroll 
+              scrollData={this.state.scrollData}/>)
+            }}/>
+        <Route path={`/${this.state.activeCategoryName}`} render={() => {
+          return (<div className={`wrapper ${this.state.activeCategoryName}`}>
+            <header className="App-header">
+              <h1 className="App-title">SWapiBox</h1>
+            </header>
+            <Nav 
+              activateCategory={this.activateCategory}
+              buttonType={Object.keys(this.state.categories)}
+              numberOfFavorites={this.state.favorites.length}
+              activeCategoryName={this.state.activeCategoryName}/>
+            <Main 
+              activeCategoryInfo={this.state.activeCategoryInfo}
+              activeCategoryName={this.state.activeCategoryName}
+              addToFavorites={this.addToFavorites}
+              favorites={this.state.favorites}/>
+          </div>)
+        }}/>
+
       </div>
     );
   }

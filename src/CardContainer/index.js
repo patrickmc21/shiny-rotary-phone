@@ -17,7 +17,7 @@ const CardContainer = ({activeCategoryInfo, activeCategoryName, addToFavorites, 
   })
   return(
     <section className='Card-Container'>
-      <h2>{activeCategoryName}</h2>
+      <h2>{activeCategoryName !== 'main' && activeCategoryName}</h2>
       {Cards}
     </section>
   )
