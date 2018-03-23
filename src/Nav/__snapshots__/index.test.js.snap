@@ -43,6 +43,7 @@ ShallowWrapper {
 />,
         ],
         <Favorites
+          activateCategory={[Function]}
           numberOfFavorites={3}
 />,
       ],
@@ -91,6 +92,7 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "function",
         "props": Object {
+          "activateCategory": [Function],
           "numberOfFavorites": 3,
         },
         "ref": null,
@@ -122,6 +124,7 @@ ShallowWrapper {
 />,
           ],
           <Favorites
+            activateCategory={[Function]}
             numberOfFavorites={3}
 />,
         ],
@@ -170,6 +173,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
+            "activateCategory": [Function],
             "numberOfFavorites": 3,
           },
           "ref": null,

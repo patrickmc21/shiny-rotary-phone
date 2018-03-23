@@ -13,11 +13,7 @@ module.exports = {
       "terrain": "grasslands, mountains",
       "surface_water": "40",
       "population": "2000000000",
-      "residents": [
-        "https://swapi.co/api/people/5/",
-        "https://swapi.co/api/people/68/",
-        "https://swapi.co/api/people/81/"
-      ],
+      "residents": [0, 1, 2],
       "films": [
         "https://swapi.co/api/films/6/",
         "https://swapi.co/api/films/1/"
@@ -92,9 +88,7 @@ module.exports = {
       "terrain": "gas giant",
       "surface_water": "0",
       "population": "6000000",
-      "residents": [
-        "https://swapi.co/api/people/26/"
-      ],
+      "residents": [0],
       "films": [
         "https://swapi.co/api/films/2/"
       ],
@@ -112,9 +106,7 @@ module.exports = {
       "terrain": "forests, mountains, lakes",
       "surface_water": "8",
       "population": "30000000",
-      "residents": [
-        "https://swapi.co/api/people/30/"
-      ],
+      "residents": [0],
       "films": [
         "https://swapi.co/api/films/3/"
       ],
@@ -132,19 +124,7 @@ module.exports = {
       "terrain": "grassy hills, swamps, forests, mountains",
       "surface_water": "12",
       "population": "4500000000",
-      "residents": [
-        "https://swapi.co/api/people/3/",
-        "https://swapi.co/api/people/21/",
-        "https://swapi.co/api/people/36/",
-        "https://swapi.co/api/people/37/",
-        "https://swapi.co/api/people/38/",
-        "https://swapi.co/api/people/39/",
-        "https://swapi.co/api/people/42/",
-        "https://swapi.co/api/people/60/",
-        "https://swapi.co/api/people/61/",
-        "https://swapi.co/api/people/66/",
-        "https://swapi.co/api/people/35/"
-      ],
+      "residents": [0,1,2,3,4],
       "films": [
         "https://swapi.co/api/films/5/",
         "https://swapi.co/api/films/4/",
@@ -165,11 +145,7 @@ module.exports = {
       "terrain": "cityscape, mountains",
       "surface_water": "unknown",
       "population": "1000000000000",
-      "residents": [
-        "https://swapi.co/api/people/34/",
-        "https://swapi.co/api/people/55/",
-        "https://swapi.co/api/people/74/"
-      ],
+      "residents": [0,1,2],
       "films": [
         "https://swapi.co/api/films/5/",
         "https://swapi.co/api/films/4/",
@@ -190,11 +166,7 @@ module.exports = {
       "terrain": "ocean",
       "surface_water": "100",
       "population": "1000000000",
-      "residents": [
-        "https://swapi.co/api/people/22/",
-        "https://swapi.co/api/people/72/",
-        "https://swapi.co/api/people/73/"
-      ],
+      "residents": [0,1],
       "films": [
         "https://swapi.co/api/films/5/"
       ],
@@ -212,9 +184,7 @@ module.exports = {
       "terrain": "rock, desert, mountain, barren",
       "surface_water": "5",
       "population": "100000000000",
-      "residents": [
-        "https://swapi.co/api/people/63/"
-      ],
+      "residents": [0],
       "films": [
         "https://swapi.co/api/films/5/"
       ],

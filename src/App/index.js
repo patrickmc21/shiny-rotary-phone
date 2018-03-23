@@ -10,7 +10,7 @@ class App extends Component {
     super(props);
     this.state = {
       scrollData: {},
-      categories: {people: false, vehicles: false, planets: false},
+      categories: {people: false, vehicles: false, planets: false, favorites: false},
       activeCategoryInfo: [],
       activeCategoryName: '',
       favorites: []
@@ -45,9 +45,13 @@ class App extends Component {
   }
 
   updateCurrentCategory = (category) => {
-    this.props.apiFetchCalls(`${category}/`)
-      .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
-      .then(activeCategoryInfo => this.setState({ activeCategoryInfo }))
+    if (category !== 'favorites') {
+      this.props.apiFetchCalls(`${category}/`)
+        .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
+        .then(activeCategoryInfo => this.setState({ activeCategoryInfo }))
+    } else {
+      this.setState({activeCategoryInfo: this.state.favorites})
+    }
   }
 
   addToFavorites = (favoriteObject) => {

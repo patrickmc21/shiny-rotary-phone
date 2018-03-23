@@ -88,7 +88,8 @@ describe('App', () => {
     const expectedCategory = {
       people: true,
       vehicles: false,
-      planets: false
+      planets: false,
+      favorites: false
     };
     const expectedName = 'people';
     wrapper.instance().activateCategory('people');
@@ -126,6 +127,13 @@ describe('App', () => {
       .then(() => wrapper.update())
       .then(() => expect(wrapper.state().activeCategoryInfo).toEqual(expected))
   });
+
+  it('updateCurrentCategory should change category to favorites if favorites button is clicked', () => {
+    const expected = mockFavorites;
+    wrapper.setState({favorites: mockFavorites});
+    wrapper.instance().updateCurrentCategory('favorites');
+    expect(wrapper.state().activeCategoryInfo).toEqual(expected);
+  })
 
   it('addToFavorites should add a card info object to favorites', () => {
     const expected = {

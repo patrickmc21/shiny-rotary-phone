@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Favorites
+    activateCategory={[Function]}
     numberOfFavorites={3}
 />,
   Symbol(enzyme.__renderer__): Object {
@@ -28,6 +29,7 @@ ShallowWrapper {
 </span>,
       ],
       "className": "favorites-button",
+      "onClick": [Function],
     },
     "ref": null,
     "rendered": Array [
@@ -62,6 +64,7 @@ ShallowWrapper {
 </span>,
         ],
         "className": "favorites-button",
+        "onClick": [Function],
       },
       "ref": null,
       "rendered": Array [

@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 import './styles.css';
 
 const Nav = ({activateCategory, buttonType, numberOfFavorites}) => {
-  const buttons = buttonType.map(button => {
+  const buttonsWithoutFavs = buttonType.filter(button => button !== 'favorites');
+  const buttons = buttonsWithoutFavs.map(button => {
     return (
       <ContentButton
         key={button} 
@@ -16,7 +17,9 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites}) => {
   return (
     <nav className='App-Nav'>
       {buttons}
-      <Favorites numberOfFavorites={numberOfFavorites}/>
+      <Favorites 
+        numberOfFavorites={numberOfFavorites}
+        activateCategory={activateCategory}/>
     </nav>
   )
 }
