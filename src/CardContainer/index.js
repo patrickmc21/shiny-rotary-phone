@@ -5,7 +5,7 @@ import './styles.css';
 
 const CardContainer = ({activeCategoryInfo, activeCategoryName, addToFavorites, favorites}) => {
   const Cards = activeCategoryInfo.map(categoryItem => {
-    const buttonClass = favorites.find(favorite => favorite.name === categoryItem.name) ? 'active' : '';
+    const buttonClass = favorites.find(favorite => favorite.name === categoryItem.name) ? 'favorite' : '';
     return (
       <ContentCard 
         key={categoryItem.name}

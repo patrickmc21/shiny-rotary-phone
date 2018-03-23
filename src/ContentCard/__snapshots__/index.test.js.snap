@@ -59,7 +59,7 @@ ShallowWrapper {
           </li>
 </ul>,
       ],
-      "className": "content-card  people",
+      "className": "content-card people ",
     },
     "ref": null,
     "rendered": Array [
@@ -233,7 +233,7 @@ ShallowWrapper {
             </li>
 </ul>,
         ],
-        "className": "content-card  people",
+        "className": "content-card people ",
       },
       "ref": null,
       "rendered": Array [

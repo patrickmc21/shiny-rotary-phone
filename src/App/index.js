@@ -10,7 +10,12 @@ class App extends Component {
     super(props);
     this.state = {
       scrollData: {},
-      categories: {people: false, vehicles: false, planets: false, favorites: false},
+      categories: {
+        people: false, 
+        vehicles: false, 
+        planets: false, 
+        favorites: false
+      },
       activeCategoryInfo: [],
       activeCategoryName: '',
       favorites: []
@@ -75,7 +80,8 @@ class App extends Component {
         <Nav 
           activateCategory={this.activateCategory}
           buttonType={Object.keys(this.state.categories)}
-          numberOfFavorites={this.state.favorites.length}/>
+          numberOfFavorites={this.state.favorites.length}
+          activeCategoryName={this.state.activeCategoryName}/>
         <Main 
           activeCategoryInfo={this.state.activeCategoryInfo}
           activeCategoryName={this.state.activeCategoryName}

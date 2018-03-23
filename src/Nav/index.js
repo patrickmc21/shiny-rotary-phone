@@ -4,14 +4,15 @@ import Favorites from '../Favorites/index.js';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const Nav = ({activateCategory, buttonType, numberOfFavorites}) => {
+const Nav = ({activateCategory, buttonType, numberOfFavorites, activeCategoryName}) => {
   const buttonsWithoutFavs = buttonType.filter(button => button !== 'favorites');
   const buttons = buttonsWithoutFavs.map(button => {
     return (
       <ContentButton
         key={button} 
         buttonType={button}
-        activateCategory={activateCategory} />
+        activateCategory={activateCategory}
+        activeCategoryName={activeCategoryName} />
     )
   })
   return (
@@ -19,7 +20,8 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites}) => {
       {buttons}
       <Favorites 
         numberOfFavorites={numberOfFavorites}
-        activateCategory={activateCategory}/>
+        activateCategory={activateCategory}
+        activeCategoryName={activeCategoryName}/>
     </nav>
   )
 }

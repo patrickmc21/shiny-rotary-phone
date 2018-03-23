@@ -54,7 +54,7 @@ ShallowWrapper {
           <ContentCard
             activeCategoryName="people"
             addToFavorites={[Function]}
-            buttonClass="active"
+            buttonClass="favorite"
             categoryItem={
                         Object {
                                     "Homeworld": "Corellia",
@@ -101,7 +101,7 @@ ShallowWrapper {
         "props": Object {
           "activeCategoryName": "people",
           "addToFavorites": [Function],
-          "buttonClass": "active",
+          "buttonClass": "favorite",
           "categoryItem": Object {
             "Homeworld": "Corellia",
             "Homeworld Population": 10000,
@@ -149,7 +149,7 @@ ShallowWrapper {
             <ContentCard
               activeCategoryName="people"
               addToFavorites={[Function]}
-              buttonClass="active"
+              buttonClass="favorite"
               categoryItem={
                             Object {
                                           "Homeworld": "Corellia",
@@ -196,7 +196,7 @@ ShallowWrapper {
           "props": Object {
             "activeCategoryName": "people",
             "addToFavorites": [Function],
-            "buttonClass": "active",
+            "buttonClass": "favorite",
             "categoryItem": Object {
               "Homeworld": "Corellia",
               "Homeworld Population": 10000,

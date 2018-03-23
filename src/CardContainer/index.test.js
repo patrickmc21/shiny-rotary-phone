@@ -47,8 +47,8 @@ describe('CardContainer', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should give a card an active class if content is in favorites', () => {
-    const expected = 'active';
+  it('should give a card an favorite class if content is in favorites', () => {
+    const expected = 'favorite';
     expect(wrapper.find('ContentCard').first().props().buttonClass).toEqual(expected)
   })
 

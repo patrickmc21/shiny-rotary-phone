@@ -1,11 +1,108 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Favorites should have an active class if favorites is selected 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Favorites
+    activateCategory={[Function]}
+    activeCategoryName="favorites"
+    numberOfFavorites={3}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        "Favorites",
+        <span
+          className="favorites-counter"
+>
+          3
+</span>,
+      ],
+      "className": "favorites-button active",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      "Favorites",
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": 3,
+          "className": "favorites-counter",
+        },
+        "ref": null,
+        "rendered": 3,
+        "type": "span",
+      },
+    ],
+    "type": "button",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          "Favorites",
+          <span
+            className="favorites-counter"
+>
+            3
+</span>,
+        ],
+        "className": "favorites-button active",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        "Favorites",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": 3,
+            "className": "favorites-counter",
+          },
+          "ref": null,
+          "rendered": 3,
+          "type": "span",
+        },
+      ],
+      "type": "button",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
 exports[`Favorites should match the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Favorites
     activateCategory={[Function]}
+    activeCategoryName="people"
     numberOfFavorites={3}
 />,
   Symbol(enzyme.__renderer__): Object {
