@@ -7,14 +7,14 @@
 
 .App-header {
   padding-top: 20px;
-  height: 80px;
+  height: 200px;
   box-sizing: border-box;
 }
 
 .App-title {
   margin: 0 auto;
-  height: 250px;
-  width: 400px;
+  height: 150px;
+  width: 320px;
   background-image: url('./images/logo.png');
   background-size: cover;
 }
@@ -25,6 +25,7 @@
   border: 3px solid #F3BF44;
   border-radius: 40px;
   border-style: outset;
+  margin-right: 20px;
   width: 140px;
   background-color: transparent;
   color: #F3BF44;
@@ -32,3 +33,6 @@
   text-align: center;
   text-decoration: none;
 }
+
+/*9F1F16 rebel red*/
+/*36363D imperial grey*/
