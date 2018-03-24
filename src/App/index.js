@@ -14,7 +14,8 @@ class App extends Component {
       scrollData: {},
       categories: {
         people: false, 
-        vehicles: false, 
+        vehicles: false,
+        starships: false, 
         planets: false, 
         favorites: false
       },
