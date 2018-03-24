@@ -27,6 +27,8 @@ class App extends Component {
     }
   }
 
+  // <iframe width="560" height="315" src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
   componentDidMount() {
     this.fetchScroll();
     if (localStorage.getItem('lastActiveUser')) {
@@ -158,7 +160,7 @@ class App extends Component {
                   onClick={this.userLogOut}>
                     Logout
                 </Link>
-                <h1 className="App-title">SWapiBox</h1>
+                <div className="App-title"></div>
               </header>
               <Nav 
                 activateCategory={this.activateCategory}

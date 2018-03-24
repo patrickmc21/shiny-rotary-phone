@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import sound from './images/Star-Wars-Theme.mp3'
 import './styles.css';
 
 class Scroll extends Component {
@@ -76,6 +77,9 @@ class Scroll extends Component {
               </div>
           }
         </form>
+        <audio autoPlay={true}>
+          <source src={sound} type='audio/mpeg'/>
+        </audio>
       </aside>
     )
   }

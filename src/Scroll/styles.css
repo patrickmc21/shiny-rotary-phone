@@ -1,9 +1,9 @@
 .scroll {
   height: 800px;
   width: 100vw;
+  color: #F3BF44;
   background-image: url('./images/background.jpg');
   background-size: cover;
-  color: #F3BF44;
   font-family: 'Nanum Gothic', sans-serif;
   overflow: hidden;
   perspective: 1000px;

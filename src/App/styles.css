@@ -1,6 +1,8 @@
 .App {
   margin: 0;
   padding: 0;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
 }
 
 .App-header {
@@ -10,8 +12,23 @@
 }
 
 .App-title {
-  margin: 0;
-  padding: 0;
+  margin: 0 auto;
+  height: 250px;
+  width: 400px;
+  background-image: url('./images/logo.png');
+  background-size: cover;
+}
+
+.return-home {
+  float: right;
+  border: none;
+  border: 3px solid #F3BF44;
+  border-radius: 40px;
+  border-style: outset;
+  width: 140px;
+  background-color: transparent;
+  color: #F3BF44;
+  font-size: 28px;
   text-align: center;
-  font-size: 56px;
+  text-decoration: none;
 }
