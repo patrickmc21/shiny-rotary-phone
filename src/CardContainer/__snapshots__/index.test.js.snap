@@ -47,6 +47,8 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        undefined,
+        undefined,
         <h2>
           people
 </h2>,
@@ -83,6 +85,8 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
+      undefined,
+      undefined,
       Object {
         "instance": null,
         "key": undefined,
@@ -142,6 +146,8 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          undefined,
+          undefined,
           <h2>
             people
 </h2>,
@@ -178,6 +184,8 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
+        undefined,
+        undefined,
         Object {
           "instance": null,
           "key": undefined,

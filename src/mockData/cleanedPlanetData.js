@@ -11,21 +11,21 @@ module.exports = [
     Terrain: 'jungle, rainforests',
     Population: '1000',
     Climate: 'temperate, tropical',
-    Residents: ''
+    Residents: 'none'
   },
   {
     name: 'Hoth',
     Terrain: 'tundra, ice caves, mountain ranges',
     Population: 'unknown',
     Climate: 'frozen',
-    Residents: ''
+    Residents: 'none'
   },
   {
     name: 'Dagobah',
     Terrain: 'swamp, jungles',
     Population: 'unknown',
     Climate: 'murky',
-    Residents: ''
+    Residents: 'none'
   },
   {
     name: 'Bespin',
