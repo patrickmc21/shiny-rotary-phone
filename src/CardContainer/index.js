@@ -3,7 +3,17 @@ import PropTypes from 'prop-types';
 import ContentCard from '../ContentCard/index.js';
 import './styles.css';
 
-const CardContainer = ({activeCategoryInfo, activeCategoryName, addToFavorites, favorites}) => {
+const CardContainer = (props) => {
+  const {
+    activeCategoryInfo, 
+    activeCategoryName, 
+    addToFavorites, 
+    favorites,
+    updateCurrentCategory,
+    next,
+    previous
+  } = props;
+
   const Cards = activeCategoryInfo.map(categoryItem => {
     const buttonClass = favorites.find(favorite => favorite.name === categoryItem.name) ? 'favorite' : '';
     return (
@@ -17,6 +27,16 @@ const CardContainer = ({activeCategoryInfo, activeCategoryName, addToFavorites, 
   })
   return(
     <section className='Card-Container'>
+      {next && 
+        <button 
+          onClick={() => updateCurrentCategory(activeCategoryName, `${next}`)}>
+            Next
+        </button>}
+        {previous &&
+          <button 
+          onClick={() => updateCurrentCategory(activeCategoryName, `${previous}`)}>
+            Previous
+        </button>}
       <h2>{activeCategoryName !== 'main' && activeCategoryName}</h2>
       {Cards}
     </section>

@@ -22,6 +22,9 @@ ShallowWrapper {
         activeCategoryName={undefined}
         addToFavorites={undefined}
         favorites={undefined}
+        next={undefined}
+        previous={undefined}
+        updateCurrentCategory={undefined}
 />,
       "className": "App-Main",
     },
@@ -35,6 +38,9 @@ ShallowWrapper {
         "activeCategoryName": undefined,
         "addToFavorites": undefined,
         "favorites": undefined,
+        "next": undefined,
+        "previous": undefined,
+        "updateCurrentCategory": undefined,
       },
       "ref": null,
       "rendered": null,
@@ -53,6 +59,9 @@ ShallowWrapper {
           activeCategoryName={undefined}
           addToFavorites={undefined}
           favorites={undefined}
+          next={undefined}
+          previous={undefined}
+          updateCurrentCategory={undefined}
 />,
         "className": "App-Main",
       },
@@ -66,6 +75,9 @@ ShallowWrapper {
           "activeCategoryName": undefined,
           "addToFavorites": undefined,
           "favorites": undefined,
+          "next": undefined,
+          "previous": undefined,
+          "updateCurrentCategory": undefined,
         },
         "ref": null,
         "rendered": null,
