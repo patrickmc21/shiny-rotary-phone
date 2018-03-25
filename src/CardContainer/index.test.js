@@ -1,12 +1,12 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import CardContainer from './index.js';
 
 describe('CardContainer', () => {
 
   let wrapper;
   let mockCategoryInfo;
-  let mockActiveCategoryName;
+  let mockActName;
   let mockAddToFavorites;
   let mockFavorites;
   let mockUpdateCategory;
@@ -16,7 +16,7 @@ describe('CardContainer', () => {
   beforeEach(() => {
     mockNext = 'next';
     mockPrevious = 'previous';
-    mockActiveCategoryName = 'people';
+    mockActName = 'people';
     mockAddToFavorites = jest.fn();
     mockUpdateCategory = jest.fn();
     mockCategoryInfo = [
@@ -44,7 +44,7 @@ describe('CardContainer', () => {
     wrapper = shallow(
       <CardContainer 
         activeCategoryInfo={mockCategoryInfo}
-        activeCategoryName={mockActiveCategoryName}
+        activeCategoryName={mockActName}
         addToFavorites={mockAddToFavorites}
         favorites={mockFavorites}
         updateCurrentCategory={mockUpdateCategory}
@@ -58,17 +58,18 @@ describe('CardContainer', () => {
 
   it('should give a card an favorite class if content is in favorites', () => {
     const expected = 'favorite';
-    expect(wrapper.find('ContentCard').first().props().buttonClass).toEqual(expected)
+    const btn = wrapper.find('ContentCard').first().props().buttonClass;
+    expect(btn).toEqual(expected);
   });
 
   it('next button should run updateCurrentCategory with correct params', () => {
     wrapper.find('.next').simulate('click');
-    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActiveCategoryName, mockNext)
+    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActName, mockNext);
   });
 
-  it('previous button should run updateCurrentCategory with correct params', () => {
+  it('previous button runs updateCurrentCategory with correct params', () => {
     wrapper.find('.previous').simulate('click');
-    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActiveCategoryName, mockPrevious)
+    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActName, mockPrevious);
   });
 
-})
+});

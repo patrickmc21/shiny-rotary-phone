@@ -22,8 +22,8 @@ class App extends Component {
       activeCategoryInfo: [],
       activeCategoryName: 'main',
       favorites: [],
-      next: null,
-      previous: null,
+      next: '',
+      previous: '',
       loading: false
     };
   }
