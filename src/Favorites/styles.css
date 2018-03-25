@@ -12,6 +12,8 @@
 }
 
 .favorites-button.active {
+  border: 1px solid #F3BF44;
+  box-shadow: 0px 0px 5px 1px #F3BF44;
   background-image: url('./images/favs-active.png');
 }
 

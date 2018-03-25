@@ -31,7 +31,7 @@ const Main = (props) => {
         title='iframe' 
         width="1300" 
         height="640" 
-        src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&controls=0&showinfo=0&autoplay=1&volume=5" 
+        src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&controls=0&showinfo=0&autoplay=1&volume=0&mute=1" 
         frameBorder="1" 
         allow="autoplay; encrypted-media" 
         allowFullScreen></iframe>
