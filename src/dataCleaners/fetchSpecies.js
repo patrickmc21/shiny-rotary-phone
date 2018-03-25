@@ -11,6 +11,7 @@ const fetchSpecies = (peopleData) => {
         }
       )
     )
+    .catch(error => new Error('fetch species failed'))
   })
   return Promise.all(peopleWithSpecies);
 }
