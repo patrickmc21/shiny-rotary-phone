@@ -1,11 +1,12 @@
 import React from 'react';
 import App from './index.js';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import LocalStorage from '../mockData/mockLocalStorage.js';
 import cleanedPeopleData from '../mockData/cleanedPeopleData.js';
 import cleanedPlanetData from '../mockData/cleanedPlanetData.js';
 import cleanedStarshipData from '../mockData/cleanedStarshipData.js';
 import cleanedVehicleData from '../mockData/cleanedVehicleData.js';
+
 describe('App', () => {
 
   let mockFetch;
@@ -37,12 +38,22 @@ describe('App', () => {
         Species: 'human'
       }
     ];
-    mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockScrollData));
+    mockFetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve(mockScrollData);
+    });
     mockCleaners = {
-      people: jest.fn().mockImplementation(() => Promise.resolve(mockPeopleData)),
-      vehicles: jest.fn().mockImplementation(() => Promise.resolve(mockVehicleData)),
-      planets: jest.fn().mockImplementation(() => Promise.resolve(mockPlanetData)),
-      starships: jest.fn().mockImplementation(() => Promise.resolve(mockStarshipData))
+      people: jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockPeopleData);
+      }),
+      vehicles: jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockVehicleData);
+      }),
+      planets: jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockPlanetData);
+      }),
+      starships: jest.fn().mockImplementation(() => {
+        return Promise.resolve(mockStarshipData);
+      })
     };
     wrapper = shallow(
       <App 
@@ -65,7 +76,7 @@ describe('App', () => {
     expect(wrapper.state('scrollData')).toEqual(expected);
   });
 
-  it('fetchScroll should add a state key of errorStatus on failed fetch', () => {
+  it('fetchScroll should add state key of errorStatus on failed fetch', () => {
     mockFetch = jest.fn().mockImplementation(() => Promise.reject({
       message: 'An error has occured'
     }));
@@ -73,16 +84,16 @@ describe('App', () => {
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
-        swapiCleaners={mockCleaners}/>)   
+        swapiCleaners={mockCleaners}/>);   
     new Promise((resolve) => {
-      resolve(() => wrapper.instance().fetchScroll())
+      resolve(() => wrapper.instance().fetchScroll());
     })
       .then(() => wrapper.update())
       .then(() => wrapper.update())
-      .then(() => expect(wrapper.state().errorStatus).toEqual(expected))
+      .then(() => expect(wrapper.state().errorStatus).toEqual(expected));
   });
 
-  it('App should update favorites from localStorage if the app has been used before', () => {
+  it('App should update favorites from localStorage', () => {
     const mockUser = 'Pat';
     localStorage.setItem('lastActiveUser', mockUser);
     localStorage.setItem(mockUser, JSON.stringify(mockFavorites));
@@ -95,7 +106,7 @@ describe('App', () => {
     expect(spy).toHaveBeenCalledWith(mockUser);
   });
 
-  it('App should not update favorites from localStorage if the app has never been used', () => {
+  it('App should not update favorites from localStorage', () => {
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
@@ -105,25 +116,24 @@ describe('App', () => {
     expect(spy).not.toHaveBeenCalled();
   });
 
-  it('userLogin should call retrieveUser with correct params if a former user visits', () => {
+  it('userLogin should call retrieveUser with correct params', () => {
     const spy =  jest.spyOn(wrapper.instance(), 'retrieveUser');
-    const mockName = 'Pat'
+    const mockName = 'Pat';
     window.localStorage.setItem('lastActiveUser', mockName);
     window.localStorage.setItem(mockName, JSON.stringify(mockFavorites));
-    wrapper.instance().userLogin(mockName)
+    wrapper.instance().userLogin(mockName);
     expect(spy).toHaveBeenCalledWith(mockName);
   });
 
-  it('userLogin should call addUser with correct params if a new user visits', () => {
+  it('userLogin should call addUser with correct params', () => {
     const spy =  jest.spyOn(wrapper.instance(), 'addUser');
-    const mockName = 'Pat'
-    wrapper.instance().userLogin(mockName)
+    const mockName = 'Pat';
+    wrapper.instance().userLogin(mockName);
     expect(spy).toHaveBeenCalledWith(mockName);
   });
 
   it('addUser should call localStorage.setItem twice', () => {
     const spy = jest.spyOn(window.localStorage, 'setItem');
-    const expectedFavs = [];
     const expectedUser = 'Pat';
     wrapper.instance().addUser(expectedUser);
     expect(spy).toHaveBeenCalledTimes(2);
@@ -152,7 +162,7 @@ describe('App', () => {
     wrapper.instance().retrieveUser(expectedUser);
     expect(wrapper.state('currentUser')).toEqual(expectedUser);
     expect(wrapper.state('favorites')).toEqual(expectedFavs);
-  })
+  });
 
   it('userLogOut should reset the currentUser', () => {
     const expected = '';
@@ -176,8 +186,10 @@ describe('App', () => {
     expect(wrapper.state('currentUser')).toEqual(mockName);
   });
 
-  it('activateCategory should change the activated category to true in state', () => {
-    mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockPeopleData))
+  it('activateCategory should change the activated category to true', () => {
+    mockFetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve(mockPeopleData);
+    });
     const expectedCategory = {
       people: true,
       vehicles: false,
@@ -188,7 +200,7 @@ describe('App', () => {
     const expectedName = 'people';
     wrapper.instance().activateCategory('people');
     expect(wrapper.state('categories')).toEqual(expectedCategory);
-    expect(wrapper.state('activeCategoryName')).toEqual(expectedName)
+    expect(wrapper.state('activeCategoryName')).toEqual(expectedName);
   });
 
   it('activateCategory should call updateCurrentCategory', () => {
@@ -199,31 +211,35 @@ describe('App', () => {
   });
 
   it('updateCurrentCategory should call apiFetchCalls', () => {
-    mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockPeopleData));
+    mockFetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve(mockPeopleData);
+    });
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
-        swapiCleaners={mockCleaners}/>)
+        swapiCleaners={mockCleaners}/>);
     wrapper.instance().updateCurrentCategory('people');
     expect(mockFetch).toHaveBeenCalled();
   });
 
   it('updateCurrentCategory should change the active category info', () => {
-    mockFetch = jest.fn().mockImplementation(() => Promise.resolve(mockPeopleData));
+    mockFetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve(mockPeopleData);
+    });
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
         swapiCleaners={mockCleaners}/>);
     const expected = mockPeopleData;
     new Promise((resolve) => {
-      resolve(wrapper.instance().updateCurrentCategory('people'))
+      resolve(wrapper.instance().updateCurrentCategory('people'));
     })
       .then(() => wrapper.update())
       .then(() => wrapper.update())
-      .then(() => expect(wrapper.state().activeCategoryInfo).toEqual(expected))
+      .then(() => expect(wrapper.state().activeCategoryInfo).toEqual(expected));
   });
 
-  it('updateCurrentCategory should change category to favorites if favorites button is clicked', () => {
+  it('updateCurrentCategory should change category to favorites', () => {
     const expected = mockFavorites;
     wrapper.setState({favorites: mockFavorites});
     wrapper.instance().updateCurrentCategory('favorites');
@@ -235,60 +251,59 @@ describe('App', () => {
     mockFetch = jest.fn().mockImplementation(() => {
       return Promise.reject({
         message: 'An error has occured'
-      })
+      });
     });
     wrapper = shallow(
       <App 
         apiFetchCalls={mockFetch}
         swapiCleaners={mockCleaners}/>);
     new Promise((resolve) => {
-      resolve(wrapper.instance().updateCurrentCategory('planets'))
+      resolve(wrapper.instance().updateCurrentCategory('planets'));
     })
       .then(() => wrapper.update())
       .then(() => wrapper.update())
       .then(() => wrapper.update())
       .then(() => wrapper.update())
-      .then(() => expect(wrapper.state('errorStatus')).toEqual(expected))
+      .then(() => expect(wrapper.state('errorStatus')).toEqual(expected));
   });
 
   it('addToFavorites should add a card info object to favorites', () => {
-    const expected = cleanedPeopleData[0]
+    const expected = cleanedPeopleData[0];
     wrapper.instance().addToFavorites(mockPeopleData[0]);
-    expect(wrapper.state().favorites).toEqual([expected])
-
+    expect(wrapper.state().favorites).toEqual([expected]);
   });
 
-  it('addToFavorites should not add an existing favorited object into favorites', () => {
+  it('addToFavorites should not add an existing object into favorites', () => {
     const clickedCard = {
-        name: 'Han Solo',
-        Homeworld: 'Corellia',
-        'Homeworld Population': 10000,
-        Species: 'human'
-      };
+      name: 'Han Solo',
+      Homeworld: 'Corellia',
+      'Homeworld Population': 10000,
+      Species: 'human'
+    };
     wrapper.setState({favorites: mockFavorites});
     wrapper.instance().addToFavorites(clickedCard);
     expect(wrapper.state().favorites.length).not.toEqual(2);
-  })
+  });
 
-  it('addToFavorites should remove an existing favorite if clicked again', () => {
+  it('addToFavorites should remove an existing favorite if clicked ', () => {
     const clickedCard = {
-        name: 'Han Solo',
-        Homeworld: 'Corellia',
-        'Homeworld Population': 10000,
-        Species: 'human'
-      };
+      name: 'Han Solo',
+      Homeworld: 'Corellia',
+      'Homeworld Population': 10000,
+      Species: 'human'
+    };
     wrapper.setState({favorites: mockFavorites});
     wrapper.instance().addToFavorites(clickedCard);
     expect(wrapper.state().favorites).toEqual([]);
   });
 
 
-  it('cleanEndPoint should take in a full endPoint and return the last portion', () => {
-    const inputCategory = 'people'
-    const inputEndPoint = "https://swapi.co/api/people/?page=2";
+  it('cleanEndPoint return a cleaned End Point', () => {
+    const inputCategory = 'people';
+    const inputPoint = "https://swapi.co/api/people/?page=2";
     const expected = "?page=2";
-    const result = wrapper.instance().cleanEndPoint(inputCategory, inputEndPoint);
+    const result = wrapper.instance().cleanEndPoint(inputCategory, inputPoint);
     expect(result).toEqual(expected);
-  })
+  });
 
 });
