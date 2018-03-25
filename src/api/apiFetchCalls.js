@@ -3,6 +3,6 @@ const apiFetchCalls = (apiEndPoint) =>{
   return fetch(`${url}${apiEndPoint}`)
     .then(response => response.json())
     .catch(error => error.message);
-}
+};
 
 export default apiFetchCalls;
