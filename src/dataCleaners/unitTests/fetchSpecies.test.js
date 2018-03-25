@@ -11,19 +11,23 @@ describe('fetchSpecies', () => {
 
   beforeEach(() => {
     fetchCalled = 0;
-    inputData = peopleData.results
+    inputData = peopleData.results;
     inputData.forEach((person, index) => {
+      let hw = peopleData.results[index].homeworld;
+      let pop = planetsData.results[hw].population;
       person.Homeworld = cleanPeopleMock[index].Homeworld;
-      person['Homeworld Population'] = planetsData.results[peopleData.results[index].homeworld].population;
+      person['Homeworld Population'] = pop;
     });
     window.fetch = jest.fn().mockImplementation(() => {
+      let person = peopleData.results[fetchCalled - 1];
+      let spc = speciesData.results[person].species;
       return Promise.resolve({
         ok: true,
         json: () => {
           fetchCalled++;
-          return Promise.resolve(speciesData.results[peopleData.results[fetchCalled - 1].species])
+          return Promise.resolve(spc);
         }
-      })
+      });
     });
   });
 
@@ -31,27 +35,27 @@ describe('fetchSpecies', () => {
     const expected = peopleData.results[0].species;
     fetchSpecies(inputData);
     expect(window.fetch).toHaveBeenCalledWith(expected);
-  })
+  });
 
-  it('should take in raw person data w/ planet info and return a cleaned person dataset', async () => {
-    const expected = cleanPeopleMock
+  it('should return a cleaned person dataset', async () => {
+    const expected = cleanPeopleMock;
     const result = await fetchSpecies(inputData);
     expect(result).toEqual(expected);
   });
 
   it('should throw an error if fetch fails', async () => {
     let expected = [];
-    for (let i = 0; i < 10; i++) {
-      expected.push(Error('fetch species failed'))
+    for (let idx = 0; idx < 10; idx++) {
+      expected.push(Error('fetch species failed'));
     }
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
         ok: false
-      })
+      });
     });
 
     const results = await fetchSpecies(inputData);
     expect(results).toEqual(expected);
 
-  })
-})
+  });
+});
