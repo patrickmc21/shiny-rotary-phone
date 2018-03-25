@@ -25,14 +25,14 @@ describe('ContentCard', () => {
         activeCategoryName={mockCategoryName}
         addToFavorites={mockAddToFavorites}
         buttonClass={mockButtonClass}/>);
-  })
+  });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
-  })
+  });
 
   it('should run addToFavorites on click with correct params', () => {
     wrapper.find('.favorite-btn').simulate('click');
     expect(mockAddToFavorites).toHaveBeenCalledWith(mockCategoryItem);
   });
-})
+});

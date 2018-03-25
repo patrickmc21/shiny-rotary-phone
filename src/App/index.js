@@ -1,4 +1,4 @@
-  import React, { Component } from 'react';
+import React, { Component } from 'react';
 import Nav from '../Nav/index.js';
 import Scroll from '../Scroll/index.js';
 import Main from '../Main/index.js';
@@ -22,10 +22,10 @@ class App extends Component {
       activeCategoryInfo: [],
       activeCategoryName: 'main',
       favorites: [],
-      next: null,
-      previous: null,
+      next: '',
+      previous: '',
       loading: false
-    }
+    };
   }
 
 
@@ -39,10 +39,10 @@ class App extends Component {
 
   fetchScroll = () => {
     const randomNumber = Math.floor(Math.random() * 7) + 1;
-    const endpoint = `films/${randomNumber}`
+    const endpoint = `films/${randomNumber}`;
     this.props.apiFetchCalls(endpoint)
       .then(scrollData=> this.setState({scrollData}))
-      .catch(error => this.setState({errorStatus: error.message}))
+      .catch(error => this.setState({errorStatus: error.message}));
   }
 
   userLogin = (name) => {
@@ -93,14 +93,14 @@ class App extends Component {
     const newCategories = Object.keys(currentCategories).reduce((acc, type) => {
       type === category ? 
         acc[type] = true
-        : acc[type] = false
+        : acc[type] = false;
       return acc;
-    }, {})
-    this.updateCurrentCategory(category)
+    }, {});
+    this.updateCurrentCategory(category);
     this.setState({
       categories: newCategories,
       activeCategoryName: category
-    })
+    });
   }
 
   updateCurrentCategory = (category, endPoint) => {
@@ -111,17 +111,21 @@ class App extends Component {
           const previous = this.cleanEndPoint(category, apiReturn.previous);
           this.setState({next, previous});
           return apiReturn;
-      })
-        .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
-        .then(activeCategoryInfo => this.setState({ loading: false, activeCategoryInfo}))
-        .catch(error => this.setState({errorStatus: error.message}))
+        })
+        .then(categoryInfo => {
+          return this.props.swapiCleaners[category](categoryInfo.results);
+        })
+        .then(activeCategoryInfo => {
+          return this.setState({ loading: false, activeCategoryInfo});
+        })
+        .catch(error => this.setState({errorStatus: error.message}));
     } else {
       this.setState({
-          activeCategoryInfo: this.state.favorites,
-          loading: false,
-          next: null,
-          previous: null
-        })
+        activeCategoryInfo: this.state.favorites,
+        loading: false,
+        next: null,
+        previous: null
+      });
     }
   }
 
@@ -133,7 +137,7 @@ class App extends Component {
   }
 
   addToFavorites = (favoriteObject) => {
-    const currentUser = this.state.currentUser
+    const currentUser = this.state.currentUser;
     let favorites = [...this.state.favorites];
     if (!favorites.find(item => item.name === favoriteObject.name)) {
       favorites.push(favoriteObject);
@@ -141,7 +145,7 @@ class App extends Component {
       favorites = favorites.filter(item => item.name !== favoriteObject.name);
     }
     localStorage.setItem(currentUser, JSON.stringify(favorites));
-    this.setState({favorites})
+    this.setState({favorites});
   }
 
   render() {
@@ -152,8 +156,8 @@ class App extends Component {
             <Scroll 
               scrollData={this.state.scrollData}
               userLogin={this.userLogin}
-              lastUser={this.state.currentUser}/>)
-            }}/>
+              lastUser={this.state.currentUser}/>);
+        }}/>
         <Route path={`/${this.state.activeCategoryName}`} render={() => {
           return (
             <div className={`wrapper ${this.state.activeCategoryName}`}>
@@ -169,7 +173,8 @@ class App extends Component {
               <Nav 
                 activateCategory={this.activateCategory}
                 buttonType={Object.keys(this.state.categories)}
-                numberOfFavorites={this.state.favorites ? this.state.favorites.length : 0}
+                numberOfFavorites={
+                  this.state.favorites ? this.state.favorites.length : 0}
                 activeCategoryName={this.state.activeCategoryName}/>
               <Main 
                 activeCategoryInfo={this.state.activeCategoryInfo}
@@ -181,7 +186,7 @@ class App extends Component {
                 previous={this.state.previous}
                 loading={this.state.loading}/>
             </div>
-          )
+          );
         }}/>
 
       </div>
@@ -192,6 +197,6 @@ class App extends Component {
 App.propTypes = {
   apiFetchCalls: PropTypes.func,
   swapiCleaners: PropTypes.object
-}
+};
 
 export default App;

@@ -8,6 +8,6 @@ const swapiCleaners = {
   vehicles: cleanVehicles,
   planets: cleanPlanets,
   starships: cleanStarships
-}
+};
 
 export default swapiCleaners;

@@ -8,12 +8,11 @@ const fetchSpecies = (peopleData) => {
           Homeworld: category.Homeworld, 
           'HomeWorld Population': category['Homeworld Population'], 
           Species: updatedCategory.name
-        }
+        })
       )
-    )
-    .catch(error => new Error('fetch species failed'))
-  })
+      .catch(error => new Error(error.message));
+  });
   return Promise.all(peopleWithSpecies);
-}
+};
 
 export { fetchSpecies };

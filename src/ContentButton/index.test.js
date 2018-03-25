@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import ContentButton from './index.js';
 
 describe('ContentButton', () => {
@@ -26,7 +26,7 @@ describe('ContentButton', () => {
   it('should run activateCategory with correct params on click', () =>{
     const expected = mockButtonType;
     wrapper.find('.content-button').simulate('click');
-    expect(mockActivateCategory).toHaveBeenCalledWith(expected)
+    expect(mockActivateCategory).toHaveBeenCalledWith(expected);
   });
 
   it('add an active class if current category is the button type', () => {

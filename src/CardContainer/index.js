@@ -15,7 +15,9 @@ const CardContainer = (props) => {
   } = props;
 
   const Cards = activeCategoryInfo.map(categoryItem => {
-    const buttonClass = favorites.find(favorite => favorite.name === categoryItem.name) ? 'favorite' : '';
+    const buttonClass = favorites.find(favorite => {
+      return favorite.name === categoryItem.name;
+    }) ? 'favorite' : '';
     return (
       <ContentCard 
         key={categoryItem.name}
@@ -23,9 +25,9 @@ const CardContainer = (props) => {
         activeCategoryName={activeCategoryName}
         addToFavorites={addToFavorites}
         buttonClass={buttonClass}/>
-    )
-  })
-  return(
+    );
+  });
+  return (
     <section className='Card-Container'>
       {next && 
         <button 
@@ -33,10 +35,12 @@ const CardContainer = (props) => {
           onClick={() => updateCurrentCategory(activeCategoryName, `${next}`)}>
             Next
         </button>}
-        {previous &&
-          <button
+      {previous &&
+        <button
           className='previous' 
-          onClick={() => updateCurrentCategory(activeCategoryName, `${previous}`)}>
+          onClick={() => {
+            updateCurrentCategory(activeCategoryName, `${previous}`);
+          }}>
             Last
         </button>}
       <h2>{activeCategoryName !== 'main' && activeCategoryName}</h2>
@@ -44,14 +48,17 @@ const CardContainer = (props) => {
         {Cards}
       </div>
     </section>
-  )
-}
+  );
+};
 
 CardContainer.propTypes = {
-  activeCategory: PropTypes.array,
+  activeCategoryInfo: PropTypes.array,
   activeCategoryName: PropTypes.string,
+  updateCurrentCategory: PropTypes.func, 
   addToFavorites: PropTypes.func,
-  favorites: PropTypes.array
+  favorites: PropTypes.array,
+  next: PropTypes.string,
+  previous: PropTypes.string
 };
 
 export default CardContainer;

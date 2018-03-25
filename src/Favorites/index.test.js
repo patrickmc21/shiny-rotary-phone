@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Favorites from './index.js';
 
 describe('Favorites', () => {
@@ -19,7 +19,7 @@ describe('Favorites', () => {
         activateCategory={mockActivateCategory}
         activeCategoryName={mockActiveCategoryName}/>
     );
-  })
+  });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();  
@@ -34,9 +34,9 @@ describe('Favorites', () => {
   it('should have an active class if favorites is selected', () => {
     mockActiveCategoryName = 'favorites';
     wrapper = shallow(<Favorites 
-        numberOfFavorites={mockNumberOfFavorites}
-        activateCategory={mockActivateCategory}
-        activeCategoryName={mockActiveCategoryName}/>);
+      numberOfFavorites={mockNumberOfFavorites}
+      activateCategory={mockActivateCategory}
+      activeCategoryName={mockActiveCategoryName}/>);
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

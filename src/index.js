@@ -12,6 +12,6 @@ const router = (
       apiFetchCalls={apiFetchCalls}
       swapiCleaners={swapiCleaners}/>
   </BrowserRouter>
-  );
+);
 
 ReactDOM.render(router, document.getElementById('root'));

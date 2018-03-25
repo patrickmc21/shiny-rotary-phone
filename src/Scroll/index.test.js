@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Scroll from './index.js';
 
 describe('Scroll', () => {
@@ -16,13 +16,13 @@ describe('Scroll', () => {
       "title": "A New Hope",
       "episode_id": 4,
       "opening_crawl": "It is a period of civil war..."
-    }
+    };
     wrapper = shallow(
       <Scroll 
         scrollData={mockScrollData}
         userLogin={mockUserLogin}
         lastUser={mockLastUser}/>);
-  })
+  });
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
@@ -34,14 +34,14 @@ describe('Scroll', () => {
     expect(wrapper.state('name')).toEqual('Pat');
   });
 
-  it('should call userLogin with correct params when running enterName method', () => {
+  it('should call userLogin with correct params', () => {
     const expected = 'Pat';
     wrapper.setState({name: expected});
     wrapper.instance().enterName();
     expect(mockUserLogin).toHaveBeenCalledWith(expected);
   });
 
-  it('should call prop userLogin with correct params on running lastUser method', () => {
+  it('should call prop userLogin with correct params', () => {
     const expected = mockLastUser;
     wrapper.instance().lastUser();
     expect(mockUserLogin).toHaveBeenCalledWith(expected);
@@ -55,5 +55,5 @@ describe('Scroll', () => {
   it('should match the snapshot after running changeUser', () => {
     wrapper.instance().changeUser();
     expect(wrapper).toMatchSnapshot();
-  })
-})
+  });
+});

@@ -2,13 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-const ContentCard = ({categoryItem, activeCategoryName, addToFavorites, buttonClass}) => {
+const ContentCard = (
+  {
+    categoryItem, 
+    activeCategoryName, 
+    addToFavorites, 
+    buttonClass}) => {
+  
   const catKeys = Object.keys(categoryItem);
   const cardContent = catKeys.filter(key => key !== 'name').map(item => {
-    return <li key={item}>{item}: {categoryItem[item]}</li>
-  })
+    return <li key={item}>{item}: {categoryItem[item]}</li>;
+  });
 
-  return(
+  return (
     <article className={`content-card ${activeCategoryName} ${buttonClass}`}>
       <header>
         <button 
@@ -20,7 +26,7 @@ const ContentCard = ({categoryItem, activeCategoryName, addToFavorites, buttonCl
         {cardContent}
       </ul>
     </article>
-  )
+  );
 };
 
 ContentCard.propTypes = {
@@ -28,6 +34,6 @@ ContentCard.propTypes = {
   activeCategoryName: PropTypes.string,
   addToFavorites: PropTypes.func,
   buttonClass: PropTypes.string
-}
+};
 
 export default ContentCard;
