@@ -114,7 +114,7 @@ class App extends Component {
       })
         .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
         .then(activeCategoryInfo => this.setState({ loading: false, activeCategoryInfo}))
-        .catch(error => console.log(error.message))
+        .catch(error => this.setState({errorStatus: error.message}))
     } else {
       this.setState({
           activeCategoryInfo: this.state.favorites,
