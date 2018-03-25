@@ -11,10 +11,6 @@ class LocalStorage {
   getItem(key) {
     return this.store[key];
   }
-
-  clear() {
-    this.store = {};
-  }
 }
 
 export default LocalStorage;

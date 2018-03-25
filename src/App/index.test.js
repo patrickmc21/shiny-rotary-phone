@@ -82,6 +82,46 @@ describe('App', () => {
       .then(() => expect(wrapper.state().errorStatus).toEqual(expected))
   });
 
+  it('addUser should call localStorage.setItem twice', () => {
+    const spy = jest.spyOn(window.localStorage, 'setItem');
+    const expectedFavs = [];
+    const expectedUser = 'Pat';
+    wrapper.instance().addUser(expectedUser);
+    expect(spy).toHaveBeenCalledTimes(2);
+  });
+
+  it('addUser should reset the apps favorites for a new user', () => {
+    const expectedFavs = [];
+    const expectedUser = 'Pat';
+    wrapper.instance().addUser(expectedUser);
+    expect(wrapper.state('favorites')).toEqual(expectedFavs);
+    expect(wrapper.state('currentUser')).toEqual(expectedUser);
+  });
+
+  it('retrieveUser should call localStorage with correct params', () => {
+    const expected = 'Pat';
+    window.localStorage.setItem(expected, JSON.stringify(mockFavorites));
+    const spyGet = jest.spyOn(window.localStorage, 'getItem');
+    wrapper.instance().retrieveUser(expected);
+    expect(spyGet).toHaveBeenCalledWith(expected);
+  });
+
+  it('retrieveUser should update state of favorites and currentUser', () => {
+    const expectedUser = 'Pat';
+    const expectedFavs = mockFavorites;
+    window.localStorage.setItem(expectedUser, JSON.stringify(expectedFavs));
+    wrapper.instance().retrieveUser(expectedUser);
+    expect(wrapper.state('currentUser')).toEqual(expectedUser);
+    expect(wrapper.state('favorites')).toEqual(expectedFavs);
+  })
+
+  it('userLogOut should reset the currentUser', () => {
+    const expected = '';
+    wrapper.setState({currentUser: 'Pat'});
+    wrapper.instance().userLogOut();
+    expect(wrapper.state('currentUser')).toEqual(expected);
+  });
+
   it('retrieveFavorites should update the favorites from localStorage', () => {
     const expected = mockFavorites;
     const mockName = 'Pat';
