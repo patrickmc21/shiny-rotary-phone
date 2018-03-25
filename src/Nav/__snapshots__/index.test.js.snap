@@ -30,6 +30,7 @@ ShallowWrapper {
       "children": Array [
         Array [
           <Link
+            className="link"
             replace={false}
             to="/people"
 >
@@ -40,6 +41,7 @@ ShallowWrapper {
             />
 </Link>,
           <Link
+            className="link"
             replace={false}
             to="/vehicles"
 >
@@ -50,6 +52,7 @@ ShallowWrapper {
             />
 </Link>,
           <Link
+            className="link"
             replace={false}
             to="/planets"
 >
@@ -61,6 +64,7 @@ ShallowWrapper {
 </Link>,
         ],
         <Link
+          className="link"
           replace={false}
           to="/favorites"
 >
@@ -85,6 +89,7 @@ ShallowWrapper {
             activeCategoryName={undefined}
             buttonType="people"
 />,
+          "className": "link",
           "replace": false,
           "to": "/people",
         },
@@ -114,6 +119,7 @@ ShallowWrapper {
             activeCategoryName={undefined}
             buttonType="vehicles"
 />,
+          "className": "link",
           "replace": false,
           "to": "/vehicles",
         },
@@ -143,6 +149,7 @@ ShallowWrapper {
             activeCategoryName={undefined}
             buttonType="planets"
 />,
+          "className": "link",
           "replace": false,
           "to": "/planets",
         },
@@ -172,6 +179,7 @@ ShallowWrapper {
             activeCategoryName={undefined}
             numberOfFavorites={3}
 />,
+          "className": "link",
           "replace": false,
           "to": "/favorites",
         },
@@ -203,6 +211,7 @@ ShallowWrapper {
         "children": Array [
           Array [
             <Link
+              className="link"
               replace={false}
               to="/people"
 >
@@ -213,6 +222,7 @@ ShallowWrapper {
               />
 </Link>,
             <Link
+              className="link"
               replace={false}
               to="/vehicles"
 >
@@ -223,6 +233,7 @@ ShallowWrapper {
               />
 </Link>,
             <Link
+              className="link"
               replace={false}
               to="/planets"
 >
@@ -234,6 +245,7 @@ ShallowWrapper {
 </Link>,
           ],
           <Link
+            className="link"
             replace={false}
             to="/favorites"
 >
@@ -258,6 +270,7 @@ ShallowWrapper {
               activeCategoryName={undefined}
               buttonType="people"
 />,
+            "className": "link",
             "replace": false,
             "to": "/people",
           },
@@ -287,6 +300,7 @@ ShallowWrapper {
               activeCategoryName={undefined}
               buttonType="vehicles"
 />,
+            "className": "link",
             "replace": false,
             "to": "/vehicles",
           },
@@ -316,6 +330,7 @@ ShallowWrapper {
               activeCategoryName={undefined}
               buttonType="planets"
 />,
+            "className": "link",
             "replace": false,
             "to": "/planets",
           },
@@ -345,6 +360,7 @@ ShallowWrapper {
               activeCategoryName={undefined}
               numberOfFavorites={3}
 />,
+            "className": "link",
             "replace": false,
             "to": "/favorites",
           },

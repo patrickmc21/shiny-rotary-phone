@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 module.exports = [
     {
       name: "Sand Crawler",

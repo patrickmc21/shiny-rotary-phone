@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 module.exports = {
   "count": 39,
   "next": "https://swapi.co/api/vehicles/?page=2",

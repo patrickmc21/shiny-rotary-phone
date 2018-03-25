@@ -9,10 +9,16 @@ describe('CardContainer', () => {
   let mockActiveCategoryName;
   let mockAddToFavorites;
   let mockFavorites;
+  let mockUpdateCategory;
+  let mockNext;
+  let mockPrevious;
 
   beforeEach(() => {
+    mockNext = 'next';
+    mockPrevious = 'previous';
     mockActiveCategoryName = 'people';
     mockAddToFavorites = jest.fn();
+    mockUpdateCategory = jest.fn();
     mockCategoryInfo = [
       {
         name: 'Han Solo',
@@ -40,7 +46,10 @@ describe('CardContainer', () => {
         activeCategoryInfo={mockCategoryInfo}
         activeCategoryName={mockActiveCategoryName}
         addToFavorites={mockAddToFavorites}
-        favorites={mockFavorites}/>);
+        favorites={mockFavorites}
+        updateCurrentCategory={mockUpdateCategory}
+        next={mockNext}
+        previous={mockPrevious}/>);
   });
 
   it('should match the snapshot', () => {
@@ -50,6 +59,16 @@ describe('CardContainer', () => {
   it('should give a card an favorite class if content is in favorites', () => {
     const expected = 'favorite';
     expect(wrapper.find('ContentCard').first().props().buttonClass).toEqual(expected)
-  })
+  });
+
+  it('next button should run updateCurrentCategory with correct params', () => {
+    wrapper.find('.next').simulate('click');
+    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActiveCategoryName, mockNext)
+  });
+
+  it('previous button should run updateCurrentCategory with correct params', () => {
+    wrapper.find('.previous').simulate('click');
+    expect(mockUpdateCategory).toHaveBeenCalledWith(mockActiveCategoryName, mockPrevious)
+  });
 
 })

@@ -9,6 +9,7 @@ const fetchPlanet = (peopleData) => {
           'Homeworld Population': updatedCategory.population
         }
       ))
+      .catch(error =>  new Error('fetch planet failed'))
     })
   return Promise.all(peopleWithPlanets);
 }

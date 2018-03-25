@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+  import React, { Component } from 'react';
 import Nav from '../Nav/index.js';
 import Scroll from '../Scroll/index.js';
 import Main from '../Main/index.js';
@@ -114,11 +114,13 @@ class App extends Component {
       })
         .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
         .then(activeCategoryInfo => this.setState({ loading: false, activeCategoryInfo}))
-        .catch(error => console.log(error.message))
+        .catch(error => this.setState({errorStatus: error.message}))
     } else {
       this.setState({
           activeCategoryInfo: this.state.favorites,
-          loading: false
+          loading: false,
+          next: null,
+          previous: null
         })
     }
   }

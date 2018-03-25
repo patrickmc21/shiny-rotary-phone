@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 module.exports = {
   "count": 61,
   "next": "https://swapi.co/api/planets/?page=2",

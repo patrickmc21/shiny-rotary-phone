@@ -9,8 +9,12 @@ describe('cleanPeople', () => {
 
   let fetchReturn;
   let expected;
+  let mockFetchSpecies;
+  let mockFetchPlanet;
 
   beforeEach(() => {
+    mockFetchPlanet = jest.mock('../fetchPlanet.js');
+    mockFetchSpecies = jest.mock('../fetchSpecies.js');
     fetchReturn = peopleData.results;
     expected = cleanPeopleMock;
   })
