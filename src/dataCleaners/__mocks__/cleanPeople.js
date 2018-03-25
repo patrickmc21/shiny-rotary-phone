@@ -3,15 +3,16 @@ import planetsData from '../../mockData/planetData.js';
 import cleanPeopleMock from '../../mockData/cleanedPeopleData.js';
 
 const fetchPlanet = () => {
-  return peopleData.results.map((person, index) => {
-      person.Homeworld = planetsData.results[person.homeworld].name;
-      person['Homeworld Population'] = planetsData.results[person.homeworld].population;
-      return person;
+  return peopleData.results.map((person) => {
+    const pop  = planetsData.results[person.homeworld].population;
+    person.Homeworld = planetsData.results[person.homeworld].name;
+    person['Homeworld Population'] = pop;
+    return person;
   });
 };
 
 const fetchSpecies = () => {
- return cleanPeopleMock;
-}
+  return cleanPeopleMock;
+};
 
-export default { fetchPlanet, fetchSpecies }
+export default { fetchPlanet, fetchSpecies };
