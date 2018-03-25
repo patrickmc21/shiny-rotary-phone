@@ -31,15 +31,13 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <header>
-          <h3>
-                    Chewbacca
-          </h3>
           <button
                     className="favorite-btn "
                     onClick={[Function]}
-          >
-                    Favorite
-          </button>
+          />
+          <h3>
+                    Chewbacca
+          </h3>
 </header>,
         <ul>
           <li>
@@ -69,19 +67,29 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": Array [
-            <h3>
-              Chewbacca
-</h3>,
             <button
               className="favorite-btn "
               onClick={[Function]}
->
-              Favorite
-</button>,
+/>,
+            <h3>
+              Chewbacca
+</h3>,
           ],
         },
         "ref": null,
         "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "className": "favorite-btn ",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "button",
+          },
           Object {
             "instance": null,
             "key": undefined,
@@ -92,19 +100,6 @@ ShallowWrapper {
             "ref": null,
             "rendered": "Chewbacca",
             "type": "h3",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Favorite",
-              "className": "favorite-btn ",
-              "onClick": [Function],
-            },
-            "ref": null,
-            "rendered": "Favorite",
-            "type": "button",
           },
         ],
         "type": "header",
@@ -205,15 +200,13 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <header>
-            <h3>
-                        Chewbacca
-            </h3>
             <button
                         className="favorite-btn "
                         onClick={[Function]}
-            >
-                        Favorite
-            </button>
+            />
+            <h3>
+                        Chewbacca
+            </h3>
 </header>,
           <ul>
             <li>
@@ -243,19 +236,29 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": Array [
-              <h3>
-                Chewbacca
-</h3>,
               <button
                 className="favorite-btn "
                 onClick={[Function]}
->
-                Favorite
-</button>,
+/>,
+              <h3>
+                Chewbacca
+</h3>,
             ],
           },
           "ref": null,
           "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "className": "favorite-btn ",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "button",
+            },
             Object {
               "instance": null,
               "key": undefined,
@@ -266,19 +269,6 @@ ShallowWrapper {
               "ref": null,
               "rendered": "Chewbacca",
               "type": "h3",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Favorite",
-                "className": "favorite-btn ",
-                "onClick": [Function],
-              },
-              "ref": null,
-              "rendered": "Favorite",
-              "type": "button",
             },
           ],
           "type": "header",

@@ -22,9 +22,24 @@ describe('fetchPlanet', () => {
           return promise;
         }
       })
-    })
+    });
 
     const results = await fetchPlanet(fetchReturn);
     expect(results).toEqual(expected);
+  })
+
+  it('should throw an error if the fetch fails', async () => {
+    let expected = [];
+    for (let i = 0; i < 10; i++) {
+      expected.push(Error('fetch planet failed'))
+    }
+    const fetchReturn = peopleData.results;
+    window.fetch = jest.fn().mockImplementation(() => {
+      return Promise.resolve({
+        ok: false
+      })
+    });
+    const result = await fetchPlanet(fetchReturn);
+    expect(result).toEqual(expected);
   })
 })

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+  import React, { Component } from 'react';
 import Nav from '../Nav/index.js';
 import Scroll from '../Scroll/index.js';
 import Main from '../Main/index.js';

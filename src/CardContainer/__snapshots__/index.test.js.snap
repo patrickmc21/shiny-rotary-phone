@@ -52,34 +52,36 @@ ShallowWrapper {
         <h2>
           people
 </h2>,
-        Array [
+        <div
+          className="card-wrapper"
+>
           <ContentCard
-            activeCategoryName="people"
-            addToFavorites={[Function]}
-            buttonClass="favorite"
-            categoryItem={
-                        Object {
-                                    "Homeworld": "Corellia",
-                                    "Homeworld Population": 10000,
-                                    "Species": "human",
-                                    "name": "Han Solo",
-                                  }
-            }
-/>,
+                    activeCategoryName="people"
+                    addToFavorites={[Function]}
+                    buttonClass="favorite"
+                    categoryItem={
+                              Object {
+                                        "Homeworld": "Corellia",
+                                        "Homeworld Population": 10000,
+                                        "Species": "human",
+                                        "name": "Han Solo",
+                                      }
+                    }
+          />
           <ContentCard
-            activeCategoryName="people"
-            addToFavorites={[Function]}
-            buttonClass=""
-            categoryItem={
-                        Object {
-                                    "Homeworld": "Kamino",
-                                    "Homeworld Population": 100,
-                                    "Species": "human",
-                                    "name": "Boba Fett",
-                                  }
-            }
-/>,
-        ],
+                    activeCategoryName="people"
+                    addToFavorites={[Function]}
+                    buttonClass=""
+                    categoryItem={
+                              Object {
+                                        "Homeworld": "Kamino",
+                                        "Homeworld Population": 100,
+                                        "Species": "human",
+                                        "name": "Boba Fett",
+                                      }
+                    }
+          />
+</div>,
       ],
       "className": "Card-Container",
     },
@@ -100,58 +102,10 @@ ShallowWrapper {
       },
       Object {
         "instance": null,
-        "key": "Han Solo",
-        "nodeType": "function",
+        "key": undefined,
+        "nodeType": "host",
         "props": Object {
-          "activeCategoryName": "people",
-          "addToFavorites": [Function],
-          "buttonClass": "favorite",
-          "categoryItem": Object {
-            "Homeworld": "Corellia",
-            "Homeworld Population": 10000,
-            "Species": "human",
-            "name": "Han Solo",
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": "Boba Fett",
-        "nodeType": "function",
-        "props": Object {
-          "activeCategoryName": "people",
-          "addToFavorites": [Function],
-          "buttonClass": "",
-          "categoryItem": Object {
-            "Homeworld": "Kamino",
-            "Homeworld Population": 100,
-            "Species": "human",
-            "name": "Boba Fett",
-          },
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-    ],
-    "type": "section",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": Array [
-          undefined,
-          undefined,
-          <h2>
-            people
-</h2>,
-          Array [
+          "children": Array [
             <ContentCard
               activeCategoryName="people"
               addToFavorites={[Function]}
@@ -179,6 +133,96 @@ ShallowWrapper {
               }
 />,
           ],
+          "className": "card-wrapper",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "Han Solo",
+            "nodeType": "function",
+            "props": Object {
+              "activeCategoryName": "people",
+              "addToFavorites": [Function],
+              "buttonClass": "favorite",
+              "categoryItem": Object {
+                "Homeworld": "Corellia",
+                "Homeworld Population": 10000,
+                "Species": "human",
+                "name": "Han Solo",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": "Boba Fett",
+            "nodeType": "function",
+            "props": Object {
+              "activeCategoryName": "people",
+              "addToFavorites": [Function],
+              "buttonClass": "",
+              "categoryItem": Object {
+                "Homeworld": "Kamino",
+                "Homeworld Population": 100,
+                "Species": "human",
+                "name": "Boba Fett",
+              },
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          undefined,
+          undefined,
+          <h2>
+            people
+</h2>,
+          <div
+            className="card-wrapper"
+>
+            <ContentCard
+                        activeCategoryName="people"
+                        addToFavorites={[Function]}
+                        buttonClass="favorite"
+                        categoryItem={
+                                    Object {
+                                                "Homeworld": "Corellia",
+                                                "Homeworld Population": 10000,
+                                                "Species": "human",
+                                                "name": "Han Solo",
+                                              }
+                        }
+            />
+            <ContentCard
+                        activeCategoryName="people"
+                        addToFavorites={[Function]}
+                        buttonClass=""
+                        categoryItem={
+                                    Object {
+                                                "Homeworld": "Kamino",
+                                                "Homeworld Population": 100,
+                                                "Species": "human",
+                                                "name": "Boba Fett",
+                                              }
+                        }
+            />
+</div>,
         ],
         "className": "Card-Container",
       },
@@ -199,41 +243,81 @@ ShallowWrapper {
         },
         Object {
           "instance": null,
-          "key": "Han Solo",
-          "nodeType": "function",
+          "key": undefined,
+          "nodeType": "host",
           "props": Object {
-            "activeCategoryName": "people",
-            "addToFavorites": [Function],
-            "buttonClass": "favorite",
-            "categoryItem": Object {
-              "Homeworld": "Corellia",
-              "Homeworld Population": 10000,
-              "Species": "human",
-              "name": "Han Solo",
-            },
+            "children": Array [
+              <ContentCard
+                activeCategoryName="people"
+                addToFavorites={[Function]}
+                buttonClass="favorite"
+                categoryItem={
+                                Object {
+                                                "Homeworld": "Corellia",
+                                                "Homeworld Population": 10000,
+                                                "Species": "human",
+                                                "name": "Han Solo",
+                                              }
+                }
+/>,
+              <ContentCard
+                activeCategoryName="people"
+                addToFavorites={[Function]}
+                buttonClass=""
+                categoryItem={
+                                Object {
+                                                "Homeworld": "Kamino",
+                                                "Homeworld Population": 100,
+                                                "Species": "human",
+                                                "name": "Boba Fett",
+                                              }
+                }
+/>,
+            ],
+            "className": "card-wrapper",
           },
           "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": "Boba Fett",
-          "nodeType": "function",
-          "props": Object {
-            "activeCategoryName": "people",
-            "addToFavorites": [Function],
-            "buttonClass": "",
-            "categoryItem": Object {
-              "Homeworld": "Kamino",
-              "Homeworld Population": 100,
-              "Species": "human",
-              "name": "Boba Fett",
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "Han Solo",
+              "nodeType": "function",
+              "props": Object {
+                "activeCategoryName": "people",
+                "addToFavorites": [Function],
+                "buttonClass": "favorite",
+                "categoryItem": Object {
+                  "Homeworld": "Corellia",
+                  "Homeworld Population": 10000,
+                  "Species": "human",
+                  "name": "Han Solo",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
             },
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
+            Object {
+              "instance": null,
+              "key": "Boba Fett",
+              "nodeType": "function",
+              "props": Object {
+                "activeCategoryName": "people",
+                "addToFavorites": [Function],
+                "buttonClass": "",
+                "categoryItem": Object {
+                  "Homeworld": "Kamino",
+                  "Homeworld Population": 100,
+                  "Species": "human",
+                  "name": "Boba Fett",
+                },
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
         },
       ],
       "type": "section",

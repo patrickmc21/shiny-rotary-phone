@@ -17,39 +17,22 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <CardContainer
-        activeCategoryInfo={undefined}
-        activeCategoryName={undefined}
-        addToFavorites={undefined}
-        favorites={undefined}
-        next={undefined}
-        previous={undefined}
-        updateCurrentCategory={undefined}
-/>,
-      "className": "App-Main",
+      "children": <main
+        className="App-Main undefined"
+>
+        <CardContainer
+                activeCategoryInfo={undefined}
+                activeCategoryName={undefined}
+                addToFavorites={undefined}
+                favorites={undefined}
+                next={undefined}
+                previous={undefined}
+                updateCurrentCategory={undefined}
+        />
+</main>,
     },
     "ref": null,
     "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "activeCategoryInfo": undefined,
-        "activeCategoryName": undefined,
-        "addToFavorites": undefined,
-        "favorites": undefined,
-        "next": undefined,
-        "previous": undefined,
-        "updateCurrentCategory": undefined,
-      },
-      "ref": null,
-      "rendered": null,
-      "type": [Function],
-    },
-    "type": "main",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "host",
@@ -63,7 +46,7 @@ ShallowWrapper {
           previous={undefined}
           updateCurrentCategory={undefined}
 />,
-        "className": "App-Main",
+        "className": "App-Main undefined",
       },
       "ref": null,
       "rendered": Object {
@@ -84,6 +67,67 @@ ShallowWrapper {
         "type": [Function],
       },
       "type": "main",
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <main
+          className="App-Main undefined"
+>
+          <CardContainer
+                    activeCategoryInfo={undefined}
+                    activeCategoryName={undefined}
+                    addToFavorites={undefined}
+                    favorites={undefined}
+                    next={undefined}
+                    previous={undefined}
+                    updateCurrentCategory={undefined}
+          />
+</main>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <CardContainer
+            activeCategoryInfo={undefined}
+            activeCategoryName={undefined}
+            addToFavorites={undefined}
+            favorites={undefined}
+            next={undefined}
+            previous={undefined}
+            updateCurrentCategory={undefined}
+/>,
+          "className": "App-Main undefined",
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeCategoryInfo": undefined,
+            "activeCategoryName": undefined,
+            "addToFavorites": undefined,
+            "favorites": undefined,
+            "next": undefined,
+            "previous": undefined,
+            "updateCurrentCategory": undefined,
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        "type": "main",
+      },
+      "type": "div",
     },
   ],
   Symbol(enzyme.__options__): Object {
