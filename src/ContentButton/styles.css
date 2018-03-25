@@ -1,5 +1,69 @@
 .content-button {
+  border: 1px solid #66AFCF;
+  border-radius: 30px;
   height: 80px;
-  width: 160px;
-  font-size: 28px;
+  width: 12vw;
+  background-color: transparent;
+  box-shadow: 0px 0px 5px 1px #66AFCF;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.content-button.active {
+  border: 1px solid #F3BF44;
+  box-shadow: 0px 0px 5px 1px #F3BF44;
+}
+
+.content-button:hover {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+}
+
+.content-button.people {
+  background-image: url('./images/people.png');
+}
+
+.content-button.vehicles {
+  background-image: url('./images/vehicles.png');
+}
+
+.content-button.starships {
+  background-image: url('./images/starships.png');
+}
+
+.content-button.planets {
+  background-image: url('./images/planets.png');
+}
+
+.content-button.people.active {
+  background-image: url('./images/people-active.png');
+}
+
+.content-button.vehicles.active {
+  background-image: url('./images/vehicles-active.png');
+}
+
+.content-button.starships.active {
+  background-image: url('./images/starships-active.png');
+}
+
+.content-button.planets.active {
+  background-image: url('./images/planets-active.png');
+}
+
+.content-button.people:hover {
+  background-image: url('./images/people-hover.png');
+}
+
+.content-button.vehicles:hover {
+  background-image: url('./images/vehicles-hover.png');
+}
+
+.content-button.starships:hover {
+  background-image: url('./images/starships-hover.png');
+}
+
+.content-button.planets:hover {
+  background-image: url('./images/planets-hover.png');
 }
