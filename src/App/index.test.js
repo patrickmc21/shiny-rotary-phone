@@ -82,6 +82,45 @@ describe('App', () => {
       .then(() => expect(wrapper.state().errorStatus).toEqual(expected))
   });
 
+  it('App should update favorites from localStorage if the app has been used before', () => {
+    const mockUser = 'Pat';
+    localStorage.setItem('lastActiveUser', mockUser);
+    localStorage.setItem(mockUser, JSON.stringify(mockFavorites));
+    wrapper = shallow(
+      <App 
+        apiFetchCalls={mockFetch}
+        swapiCleaners={mockCleaners}/>, {disableLifecycleMethods: true});
+    const spy = jest.spyOn(wrapper.instance(), 'retrieveFavorites');
+    wrapper.instance().componentDidMount();
+    expect(spy).toHaveBeenCalledWith(mockUser);
+  });
+
+  it('App should not update favorites from localStorage if the app has never been used', () => {
+    wrapper = shallow(
+      <App 
+        apiFetchCalls={mockFetch}
+        swapiCleaners={mockCleaners}/>, {disableLifecycleMethods: true});
+    const spy = jest.spyOn(wrapper.instance(), 'retrieveFavorites');
+    wrapper.instance().componentDidMount();
+    expect(spy).not.toHaveBeenCalled();
+  });
+
+  it('userLogin should call retrieveUser with correct params if a former user visits', () => {
+    const spy =  jest.spyOn(wrapper.instance(), 'retrieveUser');
+    const mockName = 'Pat'
+    window.localStorage.setItem('lastActiveUser', mockName);
+    window.localStorage.setItem(mockName, JSON.stringify(mockFavorites));
+    wrapper.instance().userLogin(mockName)
+    expect(spy).toHaveBeenCalledWith(mockName);
+  });
+
+  it('userLogin should call addUser with correct params if a new user visits', () => {
+    const spy =  jest.spyOn(wrapper.instance(), 'addUser');
+    const mockName = 'Pat'
+    wrapper.instance().userLogin(mockName)
+    expect(spy).toHaveBeenCalledWith(mockName);
+  });
+
   it('addUser should call localStorage.setItem twice', () => {
     const spy = jest.spyOn(window.localStorage, 'setItem');
     const expectedFavs = [];
