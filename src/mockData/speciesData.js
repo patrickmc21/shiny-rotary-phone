@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 module.exports = {
   "count": 37,
   "next": "https://swapi.co/api/species/?page=2",
