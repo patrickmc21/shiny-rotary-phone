@@ -23,11 +23,11 @@ class App extends Component {
       activeCategoryName: 'main',
       favorites: [],
       next: null,
-      previous: null
+      previous: null,
+      loading: false
     }
   }
 
-  // <iframe width="560" height="315" src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
   componentDidMount() {
     this.fetchScroll();
@@ -88,7 +88,7 @@ class App extends Component {
   }
 
   activateCategory = (category) => {
-    const previousCategoryName = this.state.previousCategoryName;
+    this.setState({loading: true});
     const currentCategories = {...this.state.categories};
     const newCategories = Object.keys(currentCategories).reduce((acc, type) => {
       type === category ? 
@@ -99,8 +99,7 @@ class App extends Component {
     this.updateCurrentCategory(category)
     this.setState({
       categories: newCategories,
-      activeCategoryName: category,
-      previousCategoryName
+      activeCategoryName: category
     })
   }
 
@@ -114,10 +113,13 @@ class App extends Component {
           return apiReturn;
       })
         .then(categoryInfo => this.props.swapiCleaners[category](categoryInfo.results))
-        .then(activeCategoryInfo => this.setState({ activeCategoryInfo }))
+        .then(activeCategoryInfo => this.setState({ loading: false, activeCategoryInfo}))
         .catch(error => console.log(error.message))
     } else {
-      this.setState({activeCategoryInfo: this.state.favorites})
+      this.setState({
+          activeCategoryInfo: this.state.favorites,
+          loading: false
+        })
     }
   }
 
@@ -174,7 +176,8 @@ class App extends Component {
                 addToFavorites={this.addToFavorites}
                 favorites={this.state.favorites}
                 next={this.state.next}
-                previous={this.state.previous}/>
+                previous={this.state.previous}
+                loading={this.state.loading}/>
             </div>
           )
         }}/>

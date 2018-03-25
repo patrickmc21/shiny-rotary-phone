@@ -12,12 +12,13 @@ const Main = (props) => {
     favorites,
     next,
     previous,
+    loading,
   } = props;
 
   return (
   <div>
 
-  { activeCategoryInfo.length < 1 && activeCategoryName !== 'main' ?
+  { loading && activeCategoryName !== 'main' ?
     <main className={`App-Main ${activeCategoryName} loading`}>
       <div className={`loading-image ${activeCategoryName}`}>
         <div className='loading-gif'></div>
@@ -25,10 +26,9 @@ const Main = (props) => {
     </main>
     :
     <main className={`App-Main ${activeCategoryName}`}>
-
-
     { activeCategoryName === 'main' ?
-      <iframe 
+      <iframe
+        title='iframe' 
         width="1300" 
         height="640" 
         src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&controls=0&showinfo=0&autoplay=1&volume=5" 

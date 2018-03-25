@@ -2,4 +2,71 @@
   margin: auto;
   height: 680px;
   width: 90vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+}
+
+.App-Main.people {
+  background-image: url('./images/people-bkrnd.png');
+}
+
+.App-Main.vehicles {
+  background-image: url('./images/vehicles-bkrnd.png');
+}
+
+.App-Main.starships {
+  background-image: url('./images/starship-bkrnd.jpg');
+}
+
+.App-Main.planets {
+  background-image: url('./images/planet-bkrnd.jpg');
+}
+
+.App-Main.favorites {
+  background-image: url('./images/favs-bkrnd.jpg');
+}
+
+.App-Main.loading {
+  padding-top: 100px;
+}
+
+.loading-image {
+  padding-top: 300px;
+  border-radius: 30px;
+  margin: auto;
+  height: 400px;
+  width: 60vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-sizing: content-box;
+}
+
+.loading-gif {
+  margin: auto;
+  height: 150px;
+  width: 10vw;
+  background-image: url('./images/loading-gif.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.loading-image.people {
+  background-image: url('./images/people-loading.gif');
+}
+
+.loading-image.vehicles {
+  background-image: url('./images/vehicles-loading.gif');
+}
+
+.loading-image.starships {
+  background-image: url('./images/starships-loading.gif');
+}
+
+.loading-image.planets {
+  background-image: url('./images/planet-loading.gif');
+}
+
+.loading-image.favorites {
+  background-image: url('./images/favs-loading.gif');
 }
