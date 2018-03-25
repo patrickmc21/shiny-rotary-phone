@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import sound from './images/Star-Wars-Theme.mp3'
+import sound from './images/Star-Wars-Theme.mp3';
 import './styles.css';
 
 class Scroll extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       name: '',
       notUser: false
-    }
+    };
   }
 
-  handleChange = (e) => {
-    const name = e.target.value;
+  handleChange = (event) => {
+    const name = event.target.value;
     this.setState({name});
   }
 
@@ -27,22 +27,22 @@ class Scroll extends Component {
   }
 
   lastUser = () => {
-    this.props.userLogin(this.props.lastUser)
+    this.props.userLogin(this.props.lastUser);
   }
 
   changeUser = () => {
-    this.setState({notUser: true})
+    this.setState({notUser: true});
   }
 
   render() {
     const { scrollData, lastUser } = this.props;
     const scroll = (
-        <article className='scroll-container'>
-          <h4 className='scroll-title'>{scrollData.title}</h4>
-          <p className='scroll-body'>{scrollData.opening_crawl}</p>
-          <time className='scroll-date'>{scrollData.release_date}</time>
-        </article>
-      )
+      <article className='scroll-container'>
+        <h4 className='scroll-title'>{scrollData.title}</h4>
+        <p className='scroll-body'>{scrollData.opening_crawl}</p>
+        <time className='scroll-date'>{scrollData.release_date}</time>
+      </article>
+    );
 
     return (
       <aside className='scroll'>
@@ -61,7 +61,7 @@ class Scroll extends Component {
                 <h6>Not {lastUser}?</h6>
                 <button onClick={this.changeUser}>Sign In</button> 
               </div>
-            : 
+              : 
               <div className='enter-site'>
                 <h3>Welcome to SWapiBox</h3>
                 <input 
@@ -81,7 +81,7 @@ class Scroll extends Component {
           <source src={sound} type='audio/mpeg'/>
         </audio>
       </aside>
-    )
+    );
   }
 }
 
@@ -89,7 +89,9 @@ Scroll.propTypes = {
   scrollData: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array
-  ])
-}
+  ]),
+  userLogin: PropTypes.func,
+  lastUser: PropTypes.string
+};
 
 export default Scroll;
