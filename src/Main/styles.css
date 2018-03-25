@@ -28,16 +28,16 @@
 }
 
 .App-Main.loading {
-  padding-top: 100px;
+  padding-top: 80px;
 }
 
 .loading-image {
-  padding-top: 300px;
+  padding-top: 200px;
   border-radius: 30px;
   margin: auto;
-  height: 400px;
+  height: 300px;
   width: 60vw;
-  background-size: cover;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   box-sizing: content-box;
 }
