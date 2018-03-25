@@ -118,7 +118,9 @@ class App extends Component {
     } else {
       this.setState({
           activeCategoryInfo: this.state.favorites,
-          loading: false
+          loading: false,
+          next: null,
+          previous: null
         })
     }
   }
