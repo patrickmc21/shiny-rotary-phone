@@ -33,6 +33,9 @@ ShallowWrapper {
             },
           ]
     }
+    next="next"
+    previous="previous"
+    updateCurrentCategory={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -47,8 +50,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        undefined,
-        undefined,
+        <button
+          className="next"
+          onClick={[Function]}
+>
+          Next
+</button>,
+        <button
+          className="previous"
+          onClick={[Function]}
+>
+          Last
+</button>,
         <h2>
           people
 </h2>,
@@ -87,8 +100,32 @@ ShallowWrapper {
     },
     "ref": null,
     "rendered": Array [
-      undefined,
-      undefined,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Next",
+          "className": "next",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Next",
+        "type": "button",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Last",
+          "className": "previous",
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": "Last",
+        "type": "button",
+      },
       Object {
         "instance": null,
         "key": undefined,
@@ -188,8 +225,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          undefined,
-          undefined,
+          <button
+            className="next"
+            onClick={[Function]}
+>
+            Next
+</button>,
+          <button
+            className="previous"
+            onClick={[Function]}
+>
+            Last
+</button>,
           <h2>
             people
 </h2>,
@@ -228,8 +275,32 @@ ShallowWrapper {
       },
       "ref": null,
       "rendered": Array [
-        undefined,
-        undefined,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Next",
+            "className": "next",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Next",
+          "type": "button",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Last",
+            "className": "previous",
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": "Last",
+          "type": "button",
+        },
         Object {
           "instance": null,
           "key": undefined,
