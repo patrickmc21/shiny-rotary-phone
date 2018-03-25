@@ -15,7 +15,27 @@ const Main = (props) => {
   } = props;
 
   return (
-    <main className='App-Main'>
+  <div>
+
+  { activeCategoryInfo.length < 1 && activeCategoryName !== 'main' ?
+    <main className={`App-Main ${activeCategoryName} loading`}>
+      <div className={`loading-image ${activeCategoryName}`}>
+        <div className='loading-gif'></div>
+      </div>
+    </main>
+    :
+    <main className={`App-Main ${activeCategoryName}`}>
+
+
+    { activeCategoryName === 'main' ?
+      <iframe 
+        width="1300" 
+        height="640" 
+        src="https://www.youtube.com/embed/Aja1pCUZPso?rel=0&controls=0&showinfo=0&autoplay=1&volume=5" 
+        frameBorder="1" 
+        allow="autoplay; encrypted-media" 
+        allowFullScreen></iframe>
+    :
       <CardContainer 
         activeCategoryInfo={activeCategoryInfo}
         activeCategoryName={activeCategoryName}
@@ -24,7 +44,10 @@ const Main = (props) => {
         updateCurrentCategory={updateCurrentCategory}
         next={next}
         previous={previous}/>
+    }
     </main>
+  }
+  </div>
 
   )
 }
