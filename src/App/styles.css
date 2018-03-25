@@ -21,17 +21,26 @@
 
 .return-home {
   float: right;
+  padding: 3px;
   border: none;
-  border: 3px solid #F3BF44;
+  border: 1px solid #F3BF44;
   border-radius: 40px;
   border-style: outset;
   margin-right: 20px;
   width: 140px;
-  background-color: transparent;
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 1px #F3BF44;
   color: #F3BF44;
+  font-family: 'Nanum Gothic', sans-serif;
   font-size: 28px;
   text-align: center;
   text-decoration: none;
+}
+
+.return-home:hover {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+  color: #9F1F16;
 }
 
 /*9F1F16 rebel red*/

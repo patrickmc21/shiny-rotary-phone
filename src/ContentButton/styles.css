@@ -1,13 +1,14 @@
 .content-button {
   border: 1px solid #66AFCF;
   border-radius: 30px;
-  height: 80px;
+  height: 70px;
   width: 12vw;
   background-color: transparent;
   box-shadow: 0px 0px 5px 1px #66AFCF;
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  background-position: 0 2px;
 }
 
 .content-button.active {
