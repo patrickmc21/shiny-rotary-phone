@@ -7,9 +7,9 @@ const cleanVehicles = (vehicleData) => {
         Class: vehicle.vehicle_class, 
         'Number of Passengers': vehicle.passengers
       }
-    )
-  })
-  return Promise.all(vehicles)
-}
+    );
+  });
+  return Promise.all(vehicles);
+};
 
 export { cleanVehicles };

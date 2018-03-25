@@ -36,7 +36,7 @@ describe('fetchResidents', () => {
   it('should throw an error if fetch fails', async () => {
     let expected = [];
     for (let idx = 0; idx < endPoints.length; idx++) {
-      expected.push(Error('fetch residents failed'));
+      expected.push(Error('response.json is not a function'));
     }
 
     window.fetch = jest.fn().mockImplementation(() => {

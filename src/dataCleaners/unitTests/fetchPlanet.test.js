@@ -45,7 +45,7 @@ describe('fetchPlanet', () => {
   it('should throw an error if the fetch fails', async () => {
     let expected = [];
     for (let idx = 0; idx < 10; idx++) {
-      expected.push(Error('fetch planet failed'));
+      expected.push(Error('response.json is not a function'));
     }
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({

@@ -19,12 +19,12 @@ describe('fetchSpecies', () => {
       person['Homeworld Population'] = pop;
     });
     window.fetch = jest.fn().mockImplementation(() => {
-      let person = peopleData.results[fetchCalled - 1];
-      let spc = speciesData.results[person].species;
+      fetchCalled++;
+      let person = peopleData.results[fetchCalled - 1].species;
+      let spc = speciesData.results[person];
       return Promise.resolve({
         ok: true,
         json: () => {
-          fetchCalled++;
           return Promise.resolve(spc);
         }
       });
@@ -46,7 +46,7 @@ describe('fetchSpecies', () => {
   it('should throw an error if fetch fails', async () => {
     let expected = [];
     for (let idx = 0; idx < 10; idx++) {
-      expected.push(Error('fetch species failed'));
+      expected.push(Error('response.json is not a function'));
     }
     window.fetch = jest.fn().mockImplementation(() => {
       return Promise.resolve({
