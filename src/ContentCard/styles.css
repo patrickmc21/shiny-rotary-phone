@@ -1,7 +1,65 @@
 .content-card {
-  display: inline-block;
-  border: 1px solid chartreuse;
-  margin: 4px;
-  height: 150px;
-  width: 10vw;
+  border: 1px solid #36363D;
+  border-radius: 20px;
+  height: 350px;
+  width: 16vw;
+  background-color: rgba(0,0,0, 0.4);
+  box-shadow: 0px 0px 5px 1px #36363D;
 }
+
+.content-card.favorite {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+}
+
+.content-card header {
+  padding-bottom: 10px;
+  border-radius: 20px 20px 0 0;
+  border-bottom: 2px solid #36363D;
+  height: 20%;
+  background-color: rgba(102, 175, 207, 0.2)
+}
+
+.content-card h3 {
+  margin: 5px 0 0 10px;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 36px;
+  color: #F3BF44; 
+}
+
+.favorite-btn,
+.favorite-btn.favorite {
+  float: right;
+  border: none;
+  height: 32px;
+  margin: 5px 10px 0 0;
+  width: 2.2vw;
+  background-color: transparent;
+  background-size: cover;
+}
+
+.favorite-btn {
+  background-image: url('./images/card-non-fav.png');
+}
+
+.favorite-btn.favorite {
+  background-image: url('./images/card-fav.png');
+}
+
+.content-card ul {
+  padding: 0;
+  margin: 20px auto;
+  width: 80%;
+  list-style: none;
+}
+
+.content-card li {
+  margin: 10px 0;
+  max-height: 70px;
+  color: #ffdd8d;
+  font-family: 'Nanum Gothic', sans-serif;
+  overflow: scroll;
+}
+
+
+

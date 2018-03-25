@@ -11,10 +11,10 @@ const ContentCard = ({categoryItem, activeCategoryName, addToFavorites, buttonCl
   return(
     <article className={`content-card ${activeCategoryName} ${buttonClass}`}>
       <header>
-        <h3>{categoryItem.name}</h3>
         <button 
           className={`favorite-btn ${buttonClass}`} 
-          onClick={() => addToFavorites(categoryItem)}>Favorite</button>
+          onClick={() => addToFavorites(categoryItem)}></button>
+        <h3>{categoryItem.name}</h3>
       </header>
       <ul>
         {cardContent}
