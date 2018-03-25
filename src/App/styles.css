@@ -1,17 +1,47 @@
 .App {
   margin: 0;
   padding: 0;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
 }
 
 .App-header {
   padding-top: 20px;
-  height: 80px;
+  height: 200px;
   box-sizing: border-box;
 }
 
 .App-title {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-size: 56px;
+  margin: 0 auto;
+  height: 150px;
+  width: 320px;
+  background-image: url('./images/logo.png');
+  background-size: cover;
 }
+
+.return-home {
+  float: right;
+  padding: 3px;
+  border: none;
+  border: 1px solid #F3BF44;
+  border-radius: 40px;
+  border-style: outset;
+  margin-right: 20px;
+  width: 140px;
+  background-color: rgba(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 1px #F3BF44;
+  color: #F3BF44;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 28px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.return-home:hover {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+  color: #9F1F16;
+}
+
+/*9F1F16 rebel red*/
+/*36363D imperial grey*/

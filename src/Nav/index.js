@@ -9,7 +9,7 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites, activeCategoryNam
   const buttonsWithoutFavs = buttonType.filter(button => button !== 'favorites');
   const buttons = buttonsWithoutFavs.map(button => {
     return (
-      <Link to={`/${button}`} key={button}>
+      <Link to={`/${button}`} key={button} className='link'>
           <ContentButton 
             buttonType={button}
             activateCategory={activateCategory}
@@ -20,7 +20,7 @@ const Nav = ({activateCategory, buttonType, numberOfFavorites, activeCategoryNam
   return (
     <nav className='App-Nav'>
       {buttons}
-      <Link to='/favorites'>
+      <Link to='/favorites' className='link'>
         <Favorites 
           numberOfFavorites={numberOfFavorites}
           activateCategory={activateCategory}

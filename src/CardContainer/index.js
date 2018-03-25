@@ -29,16 +29,20 @@ const CardContainer = (props) => {
     <section className='Card-Container'>
       {next && 
         <button 
+          className='next'
           onClick={() => updateCurrentCategory(activeCategoryName, `${next}`)}>
             Next
         </button>}
         {previous &&
-          <button 
+          <button
+          className='previous' 
           onClick={() => updateCurrentCategory(activeCategoryName, `${previous}`)}>
-            Previous
+            Last
         </button>}
       <h2>{activeCategoryName !== 'main' && activeCategoryName}</h2>
-      {Cards}
+      <div className='card-wrapper'>
+        {Cards}
+      </div>
     </section>
   )
 }

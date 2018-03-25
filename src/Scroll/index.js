@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import sound from './images/Star-Wars-Theme.mp3'
 import './styles.css';
 
 class Scroll extends Component {
@@ -36,45 +37,49 @@ class Scroll extends Component {
   render() {
     const { scrollData, lastUser } = this.props;
     const scroll = (
-        <article>
-          <h4>{scrollData.title}</h4>
-          <p>{scrollData.opening_crawl}</p>
-          <time>{scrollData.release_date}</time>
+        <article className='scroll-container'>
+          <h4 className='scroll-title'>{scrollData.title}</h4>
+          <p className='scroll-body'>{scrollData.opening_crawl}</p>
+          <time className='scroll-date'>{scrollData.release_date}</time>
         </article>
       )
 
     return (
       <aside className='scroll'>
+        <div className='logo-container'></div>
         {scroll}
-        <h1>SWapiBox</h1>
         <form>
           {
             !this.state.notUser && lastUser.length > 0 ?
-              <div>
+              <div className='enter-site'>
                 <h3>Welcome back {lastUser}</h3>
-                <Link to='/main' onClick={this.lastUser}>
+                <Link to='/main' onClick={this.lastUser} className='link'>
                   <button>
-                    Proceed to SWapiBox
+                    Enter SWapiBox
                   </button>
                 </Link>
                 <h6>Not {lastUser}?</h6>
                 <button onClick={this.changeUser}>Sign In</button> 
               </div>
             : 
-              <div>
+              <div className='enter-site'>
+                <h3>Welcome to SWapiBox</h3>
                 <input 
                   type='text'
                   name={this.state.name}
                   placeholder='Enter Name'
                   onChange={this.handleChange}/>
-                <Link to='/main' onClick={this.enterName}>
+                <Link to='/main' onClick={this.enterName} className='link'>
                   <button>
-                    Proceed to SWapiBox
+                   Enter SWapiBox
                   </button>
                 </Link>
               </div>
           }
         </form>
+        <audio autoPlay={true}>
+          <source src={sound} type='audio/mpeg'/>
+        </audio>
       </aside>
     )
   }

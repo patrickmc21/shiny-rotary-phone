@@ -1,5 +1,74 @@
 .Card-Container {
-  border: 1px solid coral;
+  position: relative;
+  top: -30px;
+  left: -30px;
+  padding-top: 30px;
+  height: 680px;
+  width: 106%;
+  background-image: url('./images/border.png');
+  background-size: cover;
+  overflow: hidden;
+}
+
+.next,
+.previous {
+  border: 1px solid #66AFCF;
+  border-radius: 30px;
+  height: 40px;
+  width: 6vw;
+  background-color: rgb(0,0,0,0.4);
+  box-shadow: 0px 0px 5px 1px #66AFCF;
+  color: #66AFCF;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.next {
+  float: right;
+  margin: 50px 80px 0 0;
+}
+
+.previous {
+  float: left;
+  margin: 50px 0 0 100px; 
+}
+
+.next:hover,
+.previous:hover {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+  color: #9F1F16;
+}
+
+.next:active,
+.previous:active {
+  border: 1px solid #F3BF44;
+  box-shadow: 0px 0px 5px 1px #F3BF44;
+  color: #F3BF44;
+}
+
+.Card-Container h2 {
+  border: 2px solid #36363D;
+  border-radius: 30px;
+  margin: 50px auto;
+  width: 250px;
+  background-color: rgba(0,0,0, 0.3);
+  box-shadow: 0px 0px 5px 1px #36363D;
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 56px;
+  color: #F3BF44;
+  letter-spacing: 4px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   margin: auto;
-  width: 56vw;
+  height: 75%;
+  width: 88%;
+  overflow: scroll;
 }

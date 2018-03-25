@@ -1,5 +1,145 @@
 .scroll {
-  float: left;
   height: 800px;
-  width: 40vw;
+  width: 100vw;
+  color: #F3BF44;
+  background-image: url('./images/background.jpg');
+  background-size: cover;
+  font-family: 'Nanum Gothic', sans-serif;
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.scroll-container {
+  position: relative;
+  top: -100px;
+  left: -30%;
+  width: 2500px;
+  transform-origin: 50% 100%;
+  animation: crawl 40s linear;
+  animation-fill-mode: forwards;
+}
+
+.scroll-body {
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: 20px;
+  line-height: 180px;
+}
+
+.scroll-title,
+.scroll-date {
+  font-size: 100px;
+}
+
+.logo-container {
+  border: 6px solid #ffffc3;
+  border-radius: 40px;
+  border-style: outset;
+  margin: 200px auto;
+  height: 380px;
+  width: 700px;
+  background-image: url('./images/logo.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  animation: fadeOut 3s linear;
+  animation-fill-mode: forwards;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.enter-site {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  border: 5px solid #F3BF44;
+  border-radius: 40px;
+  border-style: outset;
+  height: 300px;
+  width: 800px;
+  background-color: rgba(0,0,0, 0.4);
+  animation: appear 40s linear;
+  animation-fill-mode: forwards;
+}
+
+.enter-site h3 {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.enter-site button {
+  display: block;
+  border: none;
+  border: 3px solid #F3BF44;
+  border-radius: 40px;
+  border-style: outset;
+  margin: auto;
+  width: 320px;
+  background-color: transparent;
+  color: #F3BF44;
+  font-size: 36px;
+  text-decoration: none;
+}
+
+.enter-site h6 {
+  margin: 30px 0 10px 0;
+  text-align: center;
+  color: #66AFCF;
+  font-size: 28px;
+}
+
+.enter-site input {
+  display: block;
+  border: none;
+  border: 3px solid #F3BF44;
+  border-radius: 40px;
+  margin:  30px auto 40px auto;
+  height: 60px;
+  width: 600px;
+  background-color: rgba(0,0,0,0.2);
+  color: #F3BF44;
+  font-size: 36px;
+  padding-left: 10px;
+}
+
+
+/*66AFCF*/
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  99% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1.0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1.0
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes crawl {
+  0% {
+    top: 0;
+    transform: rotateX(20deg) translateZ(0);
+  }
+
+  100% {
+    top: -8650px;
+    transform: rotateX(25deg) translateZ(-4500px);
+  }
 }

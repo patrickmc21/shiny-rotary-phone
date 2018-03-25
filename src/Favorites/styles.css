@@ -1,10 +1,39 @@
 .favorites-button {
-  float: right;
-  height: 80px;
-  width: 180px;
-  font-size: 28px;
+  border: 1px solid #66AFCF;
+  border-radius: 30px;
+  height: 70px;
+  width: 16vw;
+  background-color: transparent;
+  box-shadow: 0px 0px 5px 1px #66AFCF;
+  background-image: url('./images/favs.png');
+  background-repeat: no-repeat;
+  background-size: 90% 100%;
+  background-position: -0.5vw 2px;
+}
+
+.favorites-button.active {
+  border: 1px solid #F3BF44;
+  box-shadow: 0px 0px 5px 1px #F3BF44;
+  background-image: url('./images/favs-active.png');
+}
+
+.favorites-button:hover {
+  border: 1px solid #9F1F16;
+  box-shadow: 0px 0px 5px 1px #9F1F16;
+  background-image: url('./images/favs-hover.png');
 }
 
 .favorites-counter {
-  margin-left: 10%;
+  float: right;
+  padding-top: 10px;
+  height: 30px;
+  width: 38px;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  background-image: url('./images/card-fav.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  vertical-align: baseline;
 }
+

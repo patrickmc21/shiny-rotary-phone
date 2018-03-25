@@ -8,7 +8,6 @@ const Favorites = ({numberOfFavorites, activateCategory, activeCategoryName}) =>
     <button
       className={className}
       onClick={() => activateCategory('favorites')}>
-      Favorites
       <span className='favorites-counter'>{numberOfFavorites}</span>
     </button>
   )
