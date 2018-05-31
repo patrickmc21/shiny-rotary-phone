@@ -2,6 +2,7 @@
 
 An application used to present Star Wars information, built with the StarWars API, React, React-Router, Javascript, and CSS.
 
+View it live [here](http://starwarswikipm.surge.sh/)
 ## Team
 
 Pat McLaughlin
